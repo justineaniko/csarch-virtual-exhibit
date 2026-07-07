@@ -50,11 +50,8 @@ The initial exhibit page structure has been completed using Astro and MDX. The e
 ### Challenges Encountered
 
 - Minor bugs that messed with the website because of a single line of code.
-- Studying a new type of framework within a limited amount of time. 
-
-### .
-
-
+- Studying a new type of framework within a limited amount of time.
+- Fixing the layout of timeline.
 
 ---
 
@@ -65,6 +62,7 @@ The initial exhibit page structure has been completed using Astro and MDX. The e
 - Develop Trivia Game functionality and add more questions
 - Improve styling and overall visual design
 - Perform final testing and polish
+- Adjust timeline from expanding page
 
 ---
 
