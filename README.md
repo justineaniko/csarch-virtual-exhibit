@@ -46,12 +46,14 @@ The initial exhibit page structure has been completed using Astro and MDX. The e
 - Table of Contents is automatically generated from Markdown headings in `ExhibitLayout.astro`.
 - Learned how Astro combines Markdown with React components, allowing interactive elements to be embedded directly into an exhibit page.
 - Understood the Git workflow for collaborative development, including cloning repositories, pulling changes, committing, and pushing updates.
+- Finding a way to override the article page color.
 
 ### Challenges Encountered
 
 - Minor bugs that messed with the website because of a single line of code.
 - Studying a new type of framework within a limited amount of time.
 - Fixing the layout of timeline.
+- Fixing layout of styles and colors within the article.
 
 ---
 
