@@ -1,22 +1,28 @@
 .mia-hero {
+    background: #111827;
+    color: #d0d4db;
     text-align: center;
-    padding: 3rem 1rem;
+    padding: 3rem 2rem;
     margin-bottom: 2rem;
 }
 
 .mia-kicker {
+    color: #d6b84f;
     letter-spacing: 0.15em;
     font-size: 0.85rem;
-    opacity: 0.7;
+    opacity: 1;
 }
 
 .mia-hero h2 {
+    color: #ffffff;
     margin: 1rem 0;
+    font-size: 2rem;
 }
 
 .mia-hero p {
     max-width: 900px;
     margin: 1rem auto;
+    color: #9ca3af;
 }
 
 .mia-exhibit-grid {
@@ -31,7 +37,9 @@
 .mia-section-panel,
 .mia-trivia-panel,
 .mia-goal-card {
-    border: 1px solid var(--border);
+    background: #111827;
+    color: #d0d4db;
+    border: none;
     border-radius: var(--radius);
     padding: 1.5rem;
 }
@@ -81,28 +89,30 @@
 }
 
 .mia-reference-group h3 {
-  color: #000000;
-  margin-top: 20px;
-  border-bottom: 1px solid #ccc;
+    color: #ef6464;
+    margin-top: 20px;
+    border-bottom: 1px solid #374151;
 }
 
 .mia-reference-group ul {
-  list-style-type: square;
-  padding-left: 20px;
+    list-style-type: square;
+    padding-left: 20px;
 }
 
 .mia-reference-group li {
-  margin-bottom: 10px;
-  font-size: 0.95rem;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: #d0d4db;
 }
 
 .mia-reference-group a {
-  text-decoration: none;
-  font-weight: bold;
+    color: #d6b84f;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .mia-reference-group a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 /* Map */
@@ -171,4 +181,11 @@
     .exhibit-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* ===== Made in Asia Theme ===== */
+
+.article {
+    background: #1b1b1b !important;
+    color: #d0d4db;
 }
