@@ -1,11 +1,13 @@
 ---
 layout: '../layouts/ExhibitLayout.astro'
 title: "Made in Asia"
+description: "An interactive virtual exhibit showcasing East Asia’s pivotal (and often overlooked) contributions to the history of computing and computer architecture."
 author: "Rance Laus; Justine Aniko Po Major; Jonah Pajarillo; Aaron Zander Romero; Luis Andre Vito"
 readingTime: "20 minutes"
 ---
 
 import '../styles/made-in-asia.css';
+import InfoCard from '../components/InfoCard.astro';
 
 # Made in Asia: Contributions of East Asia in Computing
 
@@ -22,6 +24,16 @@ import '../styles/made-in-asia.css';
     This exhibit explores different countries, specifically those located in East Asia, and their often unrecognized contributions to computing and computer architecture. Starting from the earliest contributions up to the latest, the group shall present these contributions chronologically and categorized by country.
   </p>
 </section>
+
+## Country Information
+
+<InfoCard title="Japan" body="Japan’s contribution to computer architecture started at the birth of the modern CPU. In 1971, Japanese engineer Masatoshi Shima co-designed the Intel 4004, the world’s first commercial microprocessor, originally intended for a Japanese calculator (Busicom). This had shifted the paradigm from multi-chip processors to a single-chip logic architecture. Japan also revolutionized data storage architecture when Fujio Masuoka at Toshiba invented the NAND Flash Memory in the 1980s. This invention completely changed the memory hierarchy of computers, eventually leading to the replacement of mechanical hard drives with Solid State Drives (SSDs). Today, Japan continues to lead in high-performance architecture through the Fugaku supercomputer, which utilizes an ARM-based A64FX processor that heavily utilizes massive parallel processing and on top of that, energy efficiency." />
+
+<InfoCard title="Taiwan" body="placeholder" />
+
+<InfoCard title="South Korea" body="placeholder" />
+
+<InfoCard title="China" body="placeholder" />
 
 ## Interactive Map
 
@@ -112,5 +124,7 @@ import '../styles/made-in-asia.css';
 ## References
 
 <section className="mia-section-panel">
-  <p>References will be added here.</p>
+  <pre>https://ethw.org/Oral-History:Masatoshi_Shima
+  https://www.computerhistory.org/revolution/memory-storage/8/256
+  https://www.kioxia.com/en-jp/insights/history-of-our-memory-201910.html</pre>
 </section>
