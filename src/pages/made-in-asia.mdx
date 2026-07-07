@@ -8,6 +8,7 @@ readingTime: "20 minutes"
 
 import '../styles/made-in-asia.css';
 import InfoCard from '../components/InfoCard.astro';
+import Map from '../components/map.jsx';
 
 # Made in Asia: Contributions of East Asia in Computing
 
@@ -37,19 +38,7 @@ import InfoCard from '../components/InfoCard.astro';
 
 ## Interactive Map
 
-<section className="mia-exhibit-grid">
-  <div className="mia-map-panel">
-    <div className="mia-placeholder">
-      Interactive Map Placeholder
-    </div>
-  </div>
-
-  <div className="mia-info-panel">
-    <div className="mia-placeholder">
-      Country Information Placeholder
-    </div>
-  </div>
-</section>
+<Map client:load />
 
 ## Timeline
 
