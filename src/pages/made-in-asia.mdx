@@ -42,9 +42,153 @@ import Map from '../components/map.jsx';
 
 ## Timeline
 
-<section className="mia-section-panel">
-  <div className="mia-placeholder mia-large-placeholder">
-    Timeline Placeholder
+<section className="mia-timeline-panel">
+  <div className="mia-timeline-head">
+    <p className="mia-kicker">Timeline</p>
+    <h3>Contributions Through Time</h3>
+    <p>Scroll to browse 12 milestones, from counting rods to modern supercomputers.</p>
+  </div>
+
+  <div className="mia-timeline-wrap">
+    <div className="mia-timeline-viewport">
+      <div className="mia-timeline-rod"></div>
+
+      <div className="mia-timeline-track">
+
+        <div className="mia-timeline-entry">
+          <div className="mia-timeline-bead"></div>
+          <div className="mia-timeline-card">
+            <span className="mia-timeline-date">c. 500–300 BCE</span>
+            <h4>Counting Rods <span className="mia-timeline-glyph">筹算</span></h4>
+            <span className="mia-timeline-region">China</span>
+            <p>Bamboo or bone sticks laid on a grid to represent numbers in a decimal, place-value system, moved between columns to add, subtract, multiply, and divide.</p>
+            <div className="mia-timeline-arch"><strong>Architecture link:</strong> Ancestor of place-value registers.</div>
+          </div>
+        </div>
+
+        <div className="mia-timeline-entry">
+          <div className="mia-timeline-bead"></div>
+          <div className="mia-timeline-card">
+            <span className="mia-timeline-date">c. 2nd Century CE</span>
+            <h4>Suanpan <span className="mia-timeline-glyph">算盘</span></h4>
+            <span className="mia-timeline-region">China</span>
+            <p>The Chinese abacus formalizes rod-counting into beads on wires, a hybrid decimal/quinary system fast enough to outpace early mechanical calculators.</p>
+            <div className="mia-timeline-arch"><strong>Architecture link:</strong> Fixed-width "registers" with manual carry propagation.</div>
+          </div>
+        </div>
+
+        <div className="mia-timeline-entry">
+          <div className="mia-timeline-bead"></div>
+          <div className="mia-timeline-card">
+            <span className="mia-timeline-date">1092</span>
+            <h4>Su Song's Clocktower <span className="mia-timeline-glyph">水运仪象台</span></h4>
+            <span className="mia-timeline-region">China</span>
+            <p>A water-driven tower in Kaifeng combined an escapement, armillary sphere, and celestial globe to track time and star positions automatically.</p>
+            <div className="mia-timeline-arch"><strong>Architecture link:</strong> Escapement = an early clock signal.</div>
+          </div>
+        </div>
+
+        <div className="mia-timeline-entry">
+          <div className="mia-timeline-bead"></div>
+          <div className="mia-timeline-card">
+            <span className="mia-timeline-date">c. 1600s</span>
+            <h4>Soroban <span className="mia-timeline-glyph">そろばん</span></h4>
+            <span className="mia-timeline-region">Japan</span>
+            <p>A refined, simplified bead layout for faster single-hand operation — so embedded in education that mental "anzan" arithmetic is still taught today.</p>
+            <div className="mia-timeline-arch"><strong>Architecture link:</strong> Hardware redesign for throughput.</div>
+          </div>
+        </div>
+
+        <div className="mia-timeline-entry">
+          <div className="mia-timeline-bead"></div>
+          <div className="mia-timeline-card">
+            <span className="mia-timeline-date">1946</span>
+            <h4>Abacus vs. Calculator</h4>
+            <span className="mia-timeline-region">Tokyo, Japan</span>
+            <p>A U.S. Army electro-mechanical calculator faced a soroban in a public contest — the soroban won most rounds.</p>
+            <div className="mia-timeline-arch"><strong>Architecture link:</strong> An early literal hardware benchmark.</div>
+          </div>
+        </div>
+
+        <div className="mia-timeline-entry">
+          <div className="mia-timeline-bead"></div>
+          <div className="mia-timeline-card">
+            <span className="mia-timeline-date">1958</span>
+            <h4>The 103 Computer <span className="mia-timeline-glyph">103机</span></h4>
+            <span className="mia-timeline-region">China</span>
+            <p>China's first operational digital computer, built with Soviet assistance — a vacuum-tube machine at roughly 30 operations per second.</p>
+            <div className="mia-timeline-arch"><strong>Architecture link:</strong> Entry into stored-program architecture.</div>
+          </div>
+        </div>
+
+        <div className="mia-timeline-entry">
+          <div className="mia-timeline-bead"></div>
+          <div className="mia-timeline-card">
+            <span className="mia-timeline-date">1954–1956</span>
+            <h4>FUJIC & FACOM 100</h4>
+            <span className="mia-timeline-region">Japan</span>
+            <p>Okazaki Bunji builds FUJIC, Japan's first electronic computer, largely alone. Fujitsu follows with the FACOM line.</p>
+            <div className="mia-timeline-arch"><strong>Architecture link:</strong> Relay → tube → transistor logic in one lineage.</div>
+          </div>
+        </div>
+
+        <div className="mia-timeline-entry">
+          <div className="mia-timeline-bead"></div>
+          <div className="mia-timeline-card">
+            <span className="mia-timeline-date">1967–1970s</span>
+            <h4>Korea's First Computers</h4>
+            <span className="mia-timeline-region">South Korea</span>
+            <p>An imported IBM 1401 handles the 1967 census; KIST begins domestic computing research shortly after.</p>
+            <div className="mia-timeline-arch"><strong>Architecture link:</strong> Batch-processing before Korea's chip industry existed.</div>
+          </div>
+        </div>
+
+        <div className="mia-timeline-entry">
+          <div className="mia-timeline-bead"></div>
+          <div className="mia-timeline-card">
+            <span className="mia-timeline-date">1976–1980s</span>
+            <h4>The VLSI Push <span className="mia-timeline-glyph">超LSI計画</span></h4>
+            <span className="mia-timeline-region">Japan</span>
+            <p>NEC, Hitachi, Fujitsu, Toshiba, and Mitsubishi pool research to master VLSI manufacturing, leading global DRAM production through the 1980s.</p>
+            <div className="mia-timeline-arch"><strong>Architecture link:</strong> A national leap in transistor density.</div>
+          </div>
+        </div>
+
+        <div className="mia-timeline-entry">
+          <div className="mia-timeline-bead"></div>
+          <div className="mia-timeline-card">
+            <span className="mia-timeline-date">1987</span>
+            <h4>TSMC Founded <span className="mia-timeline-glyph">台積電</span></h4>
+            <span className="mia-timeline-region">Taiwan</span>
+            <p>Morris Chang founds a "pure-play foundry" that only fabricates chips designed by other companies.</p>
+            <div className="mia-timeline-arch"><strong>Architecture link:</strong> Fabless/foundry split still standard today.</div>
+          </div>
+        </div>
+
+        <div className="mia-timeline-entry">
+          <div className="mia-timeline-bead"></div>
+          <div className="mia-timeline-card">
+            <span className="mia-timeline-date">1990s–2000s</span>
+            <h4>Samsung's Memory Rise</h4>
+            <span className="mia-timeline-region">South Korea</span>
+            <p>Samsung overtakes Japanese rivals to lead global DRAM and NAND flash production.</p>
+            <div className="mia-timeline-arch"><strong>Architecture link:</strong> Global-scale memory hierarchy.</div>
+          </div>
+        </div>
+
+        <div className="mia-timeline-entry">
+          <div className="mia-timeline-bead"></div>
+          <div className="mia-timeline-card">
+            <span className="mia-timeline-date">2016–Present</span>
+            <h4>TaihuLight & the AI Era</h4>
+            <span className="mia-timeline-region">China / Region-wide</span>
+            <p>China's Sunway TaihuLight tops supercomputer rankings on domestic processors; focus shifts to AI accelerators and RISC-V.</p>
+            <div className="mia-timeline-arch"><strong>Architecture link:</strong> Massively parallel, domestic ISA design.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
 </section>
 
