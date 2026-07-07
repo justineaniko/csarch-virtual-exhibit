@@ -79,3 +79,28 @@
         grid-template-columns: 1fr;
     }
 }
+
+.mia-reference-group h3 {
+  color: #000000;
+  margin-top: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.mia-reference-group ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+.mia-reference-group li {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.mia-reference-group a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.mia-reference-group a:hover {
+  text-decoration: underline;
+}
