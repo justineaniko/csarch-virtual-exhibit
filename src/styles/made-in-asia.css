@@ -79,3 +79,96 @@
         grid-template-columns: 1fr;
     }
 }
+
+.mia-reference-group h3 {
+  color: #000000;
+  margin-top: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.mia-reference-group ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+.mia-reference-group li {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.mia-reference-group a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.mia-reference-group a:hover {
+  text-decoration: underline;
+}
+
+/* Map */
+.exhibit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.map-container,
+.country-info-panel {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+}
+
+.map-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-svg {
+    width: 100%;
+    height: auto;
+    max-height: 480px;
+    background: var(--bg1);
+    border-radius: var(--radius);
+}
+
+.country {
+    fill: var(--bg2, #f1f5f9);
+    stroke: var(--text, #94a3b8);
+    stroke-width: 0.5;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.country:hover {
+    fill: var(--bg1, #cbd5e1);
+}
+
+.country-active {
+    fill: var(--accent, #3b82f6);
+    stroke: var(--accent, #1e40af);
+    stroke-width: 1;
+}
+
+.country-info h3 {
+    margin-top: 0;
+    font-family: "Lora Variable";
+}
+
+.placeholder {
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0.6;
+}
+
+@media (max-width: 800px) {
+    .exhibit-grid {
+        grid-template-columns: 1fr;
+    }
+}

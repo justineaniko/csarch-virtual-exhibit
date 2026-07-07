@@ -1,12 +1,14 @@
 ---
 layout: '../layouts/ExhibitLayout.astro'
 title: "Made in Asia"
+description: "An interactive virtual exhibit showcasing East Asia’s pivotal (and often overlooked) contributions to the history of computing and computer architecture."
 author: "Rance Laus; Justine Aniko Po Major; Jonah Pajarillo; Aaron Zander Romero; Luis Andre Vito"
 readingTime: "20 minutes"
 ---
 
 import '../styles/made-in-asia.css';
-import ComputingTimelineHorizontal from '../components/ComputingTimelineHorizontal.astro';
+import InfoCard from '../components/InfoCard.astro';
+import Map from '../components/map.jsx';
 
 # Made in Asia: Contributions of East Asia in Computing
 
@@ -24,27 +26,169 @@ import ComputingTimelineHorizontal from '../components/ComputingTimelineHorizont
   </p>
 </section>
 
+## Country Information
+
+<InfoCard title="Japan" body="Japan’s contribution to computer architecture started at the birth of the modern CPU. In 1971, Japanese engineer Masatoshi Shima co-designed the Intel 4004, the world’s first commercial microprocessor, originally intended for a Japanese calculator (Busicom). This had shifted the paradigm from multi-chip processors to a single-chip logic architecture. Japan also revolutionized data storage architecture when Fujio Masuoka at Toshiba invented the NAND Flash Memory in the 1980s. This invention completely changed the memory hierarchy of computers, eventually leading to the replacement of mechanical hard drives with Solid State Drives (SSDs). Today, Japan continues to lead in high-performance architecture through the Fugaku supercomputer, which utilizes an ARM-based A64FX processor that heavily utilizes massive parallel processing and on top of that, energy efficiency. Additionally, entertainment giants Sony and Nintendo transformed specialized computer architecture; the Nintendo 64 brought 64-bit computing to the masses, while Sony’s PlayStation series pushed the limits of high-performance RISC and parallel processing through custom-engineered silicon like the Cell engine." />
+
+<InfoCard title="Taiwan" body="Taiwan’s role in computer architecture is defined by the Foundry Model and the standardization of the PC. TSMC (Taiwan Semiconductor Manufacturing Company) revolutionized the industry by separating chip design from chip manufacturing. This allowed architectural giants like Apple, Nvidia, and AMD to push the boundaries of complex circuit design without the burden of operating factories. Beyond the silicon itself, Taiwanese companies like ASUS, Gigabyte, and Acer were instrumental in the 1990s for perfecting the motherboard architecture. They standardized the layout of the Northbridge/Southbridge chipsets and expansion slots (like PCI and later PCIe), which dictated how CPUs communicate with peripherals in almost every desktop computer used today." />
+
+<InfoCard title="South Korea" body="While other nations focused on logic, South Korea perfected the architecture of the Memory Wall. Samsung and SK Hynix dominate the global development of DRAM and the NAND Flash. Their architectural innovations in High-Bandwidth Memory (HBM) have become the backbone of modern AI and GPU architectures, allowing data to move between the memory and the processor at speeds previously thought impossible. South Korea also led the transition to modern mobile architectures; through the development of System-on-Chip (SoC) designs for their smartphones, they helped integrate CPU, GPU, and cellular modems into a single, power-efficient architectural footprint that defines modern mobile computing." />
+
+<InfoCard title="China" body="China has rapidly moved from a consumer of technology to an architect of high-performance computing (HPC). China’s Sunway TaihuLight supercomputer gained international fame because its architecture was built entirely on homegrown processors (the SW26010), rather than relying on Western chips like Intel or AMD. This demonstrated a massive leap in many-core processor architecture. Currently, China is a global leader in the adoption of RISC-V, an open-source instruction set architecture (ISA). By investing heavily in RISC-V, Chinese architects are creating a new generation of processors that are independent of proprietary Western standards (like the x86 or ARM), aiming for a future of open computer architecture for everything from IoT (Internet of Things) devices to data centers." />
+
 ## Interactive Map
 
-<section className="mia-exhibit-grid">
-  <div className="mia-map-panel">
-    <div className="mia-placeholder">
-      Interactive Map Placeholder
-    </div>
-  </div>
-
-  <div className="mia-info-panel">
-    <div className="mia-placeholder">
-      Country Information Placeholder
-    </div>
-  </div>
-</section>
+<Map client:load />
 
 ## Timeline
 
-<section className="mia-section-panel">
-  <div className="mia-placeholder mia-large-placeholder">
-    Timeline Placeholder
+<section className="mia-timeline-panel">
+  <div className="mia-timeline-head">
+    <p className="mia-kicker">Timeline</p>
+    <h3>Contributions Through Time</h3>
+    <p>Scroll to browse 12 milestones, from counting rods to modern supercomputers.</p>
+  </div>
+
+  <div className="mia-timeline-wrap">
+    <div className="mia-timeline-viewport">
+      <div className="mia-timeline-rod"></div>
+
+      <div className="mia-timeline-track">
+
+        <div className="mia-timeline-entry">
+          <div className="mia-timeline-bead"></div>
+          <div className="mia-timeline-card">
+            <span className="mia-timeline-date">c. 500–300 BCE</span>
+            <h4>Counting Rods <span className="mia-timeline-glyph">筹算</span></h4>
+            <span className="mia-timeline-region">China</span>
+            <p>Bamboo or bone sticks laid on a grid to represent numbers in a decimal, place-value system, moved between columns to add, subtract, multiply, and divide.</p>
+            <div className="mia-timeline-arch"><strong>Architecture link:</strong> Ancestor of place-value registers.</div>
+          </div>
+        </div>
+
+        <div className="mia-timeline-entry">
+          <div className="mia-timeline-bead"></div>
+          <div className="mia-timeline-card">
+            <span className="mia-timeline-date">c. 2nd Century CE</span>
+            <h4>Suanpan <span className="mia-timeline-glyph">算盘</span></h4>
+            <span className="mia-timeline-region">China</span>
+            <p>The Chinese abacus formalizes rod-counting into beads on wires, a hybrid decimal/quinary system fast enough to outpace early mechanical calculators.</p>
+            <div className="mia-timeline-arch"><strong>Architecture link:</strong> Fixed-width "registers" with manual carry propagation.</div>
+          </div>
+        </div>
+
+        <div className="mia-timeline-entry">
+          <div className="mia-timeline-bead"></div>
+          <div className="mia-timeline-card">
+            <span className="mia-timeline-date">1092</span>
+            <h4>Su Song's Clocktower <span className="mia-timeline-glyph">水运仪象台</span></h4>
+            <span className="mia-timeline-region">China</span>
+            <p>A water-driven tower in Kaifeng combined an escapement, armillary sphere, and celestial globe to track time and star positions automatically.</p>
+            <div className="mia-timeline-arch"><strong>Architecture link:</strong> Escapement = an early clock signal.</div>
+          </div>
+        </div>
+
+        <div className="mia-timeline-entry">
+          <div className="mia-timeline-bead"></div>
+          <div className="mia-timeline-card">
+            <span className="mia-timeline-date">c. 1600s</span>
+            <h4>Soroban <span className="mia-timeline-glyph">そろばん</span></h4>
+            <span className="mia-timeline-region">Japan</span>
+            <p>A refined, simplified bead layout for faster single-hand operation — so embedded in education that mental "anzan" arithmetic is still taught today.</p>
+            <div className="mia-timeline-arch"><strong>Architecture link:</strong> Hardware redesign for throughput.</div>
+          </div>
+        </div>
+
+        <div className="mia-timeline-entry">
+          <div className="mia-timeline-bead"></div>
+          <div className="mia-timeline-card">
+            <span className="mia-timeline-date">1946</span>
+            <h4>Abacus vs. Calculator</h4>
+            <span className="mia-timeline-region">Tokyo, Japan</span>
+            <p>A U.S. Army electro-mechanical calculator faced a soroban in a public contest — the soroban won most rounds.</p>
+            <div className="mia-timeline-arch"><strong>Architecture link:</strong> An early literal hardware benchmark.</div>
+          </div>
+        </div>
+
+        <div className="mia-timeline-entry">
+          <div className="mia-timeline-bead"></div>
+          <div className="mia-timeline-card">
+            <span className="mia-timeline-date">1958</span>
+            <h4>The 103 Computer <span className="mia-timeline-glyph">103机</span></h4>
+            <span className="mia-timeline-region">China</span>
+            <p>China's first operational digital computer, built with Soviet assistance — a vacuum-tube machine at roughly 30 operations per second.</p>
+            <div className="mia-timeline-arch"><strong>Architecture link:</strong> Entry into stored-program architecture.</div>
+          </div>
+        </div>
+
+        <div className="mia-timeline-entry">
+          <div className="mia-timeline-bead"></div>
+          <div className="mia-timeline-card">
+            <span className="mia-timeline-date">1954–1956</span>
+            <h4>FUJIC & FACOM 100</h4>
+            <span className="mia-timeline-region">Japan</span>
+            <p>Okazaki Bunji builds FUJIC, Japan's first electronic computer, largely alone. Fujitsu follows with the FACOM line.</p>
+            <div className="mia-timeline-arch"><strong>Architecture link:</strong> Relay → tube → transistor logic in one lineage.</div>
+          </div>
+        </div>
+
+        <div className="mia-timeline-entry">
+          <div className="mia-timeline-bead"></div>
+          <div className="mia-timeline-card">
+            <span className="mia-timeline-date">1967–1970s</span>
+            <h4>Korea's First Computers</h4>
+            <span className="mia-timeline-region">South Korea</span>
+            <p>An imported IBM 1401 handles the 1967 census; KIST begins domestic computing research shortly after.</p>
+            <div className="mia-timeline-arch"><strong>Architecture link:</strong> Batch-processing before Korea's chip industry existed.</div>
+          </div>
+        </div>
+
+        <div className="mia-timeline-entry">
+          <div className="mia-timeline-bead"></div>
+          <div className="mia-timeline-card">
+            <span className="mia-timeline-date">1976–1980s</span>
+            <h4>The VLSI Push <span className="mia-timeline-glyph">超LSI計画</span></h4>
+            <span className="mia-timeline-region">Japan</span>
+            <p>NEC, Hitachi, Fujitsu, Toshiba, and Mitsubishi pool research to master VLSI manufacturing, leading global DRAM production through the 1980s.</p>
+            <div className="mia-timeline-arch"><strong>Architecture link:</strong> A national leap in transistor density.</div>
+          </div>
+        </div>
+
+        <div className="mia-timeline-entry">
+          <div className="mia-timeline-bead"></div>
+          <div className="mia-timeline-card">
+            <span className="mia-timeline-date">1987</span>
+            <h4>TSMC Founded <span className="mia-timeline-glyph">台積電</span></h4>
+            <span className="mia-timeline-region">Taiwan</span>
+            <p>Morris Chang founds a "pure-play foundry" that only fabricates chips designed by other companies.</p>
+            <div className="mia-timeline-arch"><strong>Architecture link:</strong> Fabless/foundry split still standard today.</div>
+          </div>
+        </div>
+
+        <div className="mia-timeline-entry">
+          <div className="mia-timeline-bead"></div>
+          <div className="mia-timeline-card">
+            <span className="mia-timeline-date">1990s–2000s</span>
+            <h4>Samsung's Memory Rise</h4>
+            <span className="mia-timeline-region">South Korea</span>
+            <p>Samsung overtakes Japanese rivals to lead global DRAM and NAND flash production.</p>
+            <div className="mia-timeline-arch"><strong>Architecture link:</strong> Global-scale memory hierarchy.</div>
+          </div>
+        </div>
+
+        <div className="mia-timeline-entry">
+          <div className="mia-timeline-bead"></div>
+          <div className="mia-timeline-card">
+            <span className="mia-timeline-date">2016–Present</span>
+            <h4>TaihuLight & the AI Era</h4>
+            <span className="mia-timeline-region">China / Region-wide</span>
+            <p>China's Sunway TaihuLight tops supercomputer rankings on domestic processors; focus shifts to AI accelerators and RISC-V.</p>
+            <div className="mia-timeline-arch"><strong>Architecture link:</strong> Massively parallel, domestic ISA design.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
 </section>
 
@@ -112,8 +256,39 @@ import ComputingTimelineHorizontal from '../components/ComputingTimelineHorizont
 
 ## References
 
-<section className="mia-section-panel">
-  <p>References will be added here.</p>
-</section>
+<section class="mia-section-panel">
+  <div class="mia-reference-group">
+    <h3>Japan</h3>
+    <ul>
+      <li>Shima, M. <a href="https://ethw.org/Oral-History:Masatoshi_Shima" target="_blank">Oral-History: Masatoshi Shima and the 4004</a>. Engineering and Technology History Wiki.</li>
+      <li>Computer History Museum. <a href="https://www.computerhistory.org/revolution/memory-storage/8/256" target="_blank">Memory & Storage: The First Microprocessors</a>.</li>
+      <li>Kioxia. <a href="https://www.kioxia.com/en-jp/insights/history-of-our-memory-201910.html" target="_blank">History of Our Memory: The Invention of NAND Flash</a>.</li>
+      <li>Amazon Web Services. <a href="https://aws.amazon.com/blogs/publicsector/why-fugaku-japans-fastest-supercomputer-went-virtual-on-aws/" target="_blank">Why Fugaku, Japan’s Fastest Supercomputer, Went Virtual</a>.</li>
+      <li>Copetti. <a href="https://www.copetti.org/writings/consoles/nintendo-64/" target="_blank">Nintendo 64 Architecture</a>.</li>
+      <li>David Bader. <a href="https://davidbader.net/post/20180608-dcd/" target="_blank">The PlayStation Supercomputer</a>.</li>
+    </ul>
 
-<ComputingTimelineHorizontal />
+    <h3>Taiwan</h3>
+    <ul>
+      <li>TSMC. <a href="https://www.tsmc.com/english/aboutTSMC/dc_infographics_foundry" target="_blank">Infographics: The Dedicated IC Foundry Model</a>.</li>
+      <li>Culpium. <a href="https://www.culpium.com/p/exclusiveapple-is-fighting-for-tsmc" target="_blank">Apple’s Strategic Partnership with TSMC for 2nm Chips</a>.</li>
+      <li>ASUS. <a href="https://www.asus.com/event/pcdiy/sg/our-legacy.html" target="_blank">Our Legacy: Leading the Motherboard Industry</a>.</li>
+      <li>Jabroo Tech. <a href="https://jabroo.blogspot.com/2011/09/motherboard.html" target="_blank">A Detailed History of the Motherboard</a>.</li>
+    </ul>
+
+    <h3>South Korea</h3>
+    <ul>
+      <li>Reuters. <a href="https://www.reuters.com/world/asia-pacific/south-korean-president-unveil-massive-ai-chip-investment-drive-2026-06-29/" target="_blank">South Korea to Unveil Massive AI Chip Investment Drive</a>.</li>
+      <li>Reuters. <a href="https://www.reuters.com/world/asia-pacific/south-koreas-sk-hynix-launch-28-billion-us-listing-ride-global-ai-wave-2026-07-06/" target="_blank">SK Hynix: Riding the Global AI Wave</a>.</li>
+      <li>Yahoo Finance. <a href="https://finance.yahoo.com/technology/articles/south-korea-rescue-worlds-biggest-113500553.html" target="_blank">Rescue Plan for the World's Biggest Memory Makers</a>.</li>
+      <li>BigGo News. <a href="https://finance.biggo.com/news/36a29647-eaab-43d4-bc23-19456f25ef71" target="_blank">Trends in South Korean Semiconductor Growth</a>.</li>
+    </ul>
+
+    <h3>China</h3>
+    <ul>
+      <li>BBC News. <a href="https://www.bbc.com/news/articles/c9q2pwzngjqo" target="_blank">The Global Impact of China's Computing Sector</a>.</li>
+      <li>The State Council Information Office of China. <a href="http://www.scio.gov.cn/news_0/202209/t20220921_415792.html" target="_blank">The Digital Economy and High-Tech Innovation in China</a>.</li>
+      <li>Jamestown Foundation. <a href="https://jamestown.substack.com/p/examining-chinas-grand-strategy-for" target="_blank">Examining China’s Grand Strategy for Tech Leadership</a>.</li>
+    </ul>
+  </div>
+</section>
