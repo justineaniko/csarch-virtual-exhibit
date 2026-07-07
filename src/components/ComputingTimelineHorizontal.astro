@@ -1,0 +1,383 @@
+---
+// src/components/ComputingTimelineHorizontal.astro
+// Usage inside an .mdx page:
+//   import ComputingTimelineHorizontal from '../components/ComputingTimelineHorizontal.astro';
+//   <ComputingTimelineHorizontal />
+
+export interface TimelineEntry {
+  date: string;
+  title: string;
+  glyph?: string;
+  region: string;
+  body: string;
+  archNote: string;
+}
+
+const entries: TimelineEntry[] = [
+  {
+    date: "c. 500–300 BCE",
+    title: "Counting Rods",
+    glyph: "筹算",
+    region: "China",
+    body: "Bamboo or bone sticks laid on a grid to represent numbers in a decimal, place-value system, moved between columns to add, subtract, multiply, and divide.",
+    archNote: "Ancestor of place-value registers.",
+  },
+  {
+    date: "c. 2nd Century CE",
+    title: "Suanpan",
+    glyph: "算盘",
+    region: "China",
+    body: "The Chinese abacus formalizes rod-counting into beads on wires, a hybrid decimal/quinary system fast enough to outpace early mechanical calculators.",
+    archNote: "Fixed-width \"registers\" with manual carry propagation.",
+  },
+  {
+    date: "1092",
+    title: "Su Song's Clocktower",
+    glyph: "水运仪象台",
+    region: "China (Song)",
+    body: "A water-driven tower in Kaifeng combined an escapement, armillary sphere, and celestial globe to track time and star positions automatically.",
+    archNote: "Escapement = an early clock signal.",
+  },
+  {
+    date: "c. 1600s",
+    title: "Soroban",
+    glyph: "そろばん",
+    region: "Japan",
+    body: "A refined, simplified bead layout for faster single-hand operation — so embedded in education that mental \"anzan\" arithmetic is still taught today.",
+    archNote: "Hardware redesign for throughput.",
+  },
+  {
+    date: "1946",
+    title: "Abacus vs. Calculator",
+    region: "Tokyo, Japan",
+    body: "A U.S. Army electro-mechanical calculator faced a soroban in a public contest — the soroban won most rounds.",
+    archNote: "An early literal hardware benchmark.",
+  },
+  {
+    date: "1958",
+    title: "The 103 Computer",
+    glyph: "103机",
+    region: "China",
+    body: "China's first operational digital computer, built with Soviet assistance — a vacuum-tube machine at roughly 30 operations per second.",
+    archNote: "Entry into stored-program architecture.",
+  },
+  {
+    date: "1954–1956",
+    title: "FUJIC & FACOM 100",
+    region: "Japan",
+    body: "Okazaki Bunji builds FUJIC, Japan's first electronic computer, largely alone. Fujitsu follows with the FACOM line.",
+    archNote: "Relay → tube → transistor logic in one lineage.",
+  },
+  {
+    date: "1967–1970s",
+    title: "Korea's First Computers",
+    region: "South Korea",
+    body: "An imported IBM 1401 handles the 1967 census; KIST begins domestic computing research shortly after.",
+    archNote: "Batch-processing before Korea's chip industry existed.",
+  },
+  {
+    date: "1976–1980s",
+    title: "The VLSI Push",
+    glyph: "超LSI計画",
+    region: "Japan",
+    body: "NEC, Hitachi, Fujitsu, Toshiba, and Mitsubishi pool research to master VLSI manufacturing, leading global DRAM production through the 1980s.",
+    archNote: "A national leap in transistor density.",
+  },
+  {
+    date: "1987",
+    title: "TSMC Founded",
+    glyph: "台積電",
+    region: "Taiwan",
+    body: "Morris Chang founds a \"pure-play foundry\" that only fabricates chips designed by other companies.",
+    archNote: "Fabless/foundry split still standard today.",
+  },
+  {
+    date: "1990s–2000s",
+    title: "Samsung's Memory Rise",
+    region: "South Korea",
+    body: "Samsung overtakes Japanese rivals to lead global DRAM and NAND flash production.",
+    archNote: "Global-scale memory hierarchy.",
+  },
+  {
+    date: "2016–Present",
+    title: "TaihuLight & the AI Era",
+    region: "China / Region-wide",
+    body: "China's Sunway TaihuLight tops supercomputer rankings on domestic processors; focus shifts to AI accelerators and RISC-V.",
+    archNote: "Massively parallel, domestic ISA design.",
+  },
+];
+---
+
+<section class="h-timeline-section">
+  <div class="h-timeline-head">
+    <span class="h-eyebrow">Timeline Wing</span>
+    <h2>Reckoning <span class="h-glyph-accent">算盘到芯片</span></h2>
+    <p>Scroll sideways through {entries.length} eras — from counting rods to the AI age.</p>
+  </div>
+
+  <div class="h-timeline-wrap">
+    <button class="h-nav h-nav-prev" aria-label="Scroll to earlier era" data-dir="-1">&#8592;</button>
+
+    <div class="h-timeline-viewport">
+      <div class="h-rod-line"><div class="h-rod-fill" id="hRodFill"></div></div>
+
+      <div class="h-timeline-track" id="hTrack">
+        {entries.map((entry) => (
+          <div class="h-entry">
+            <div class="h-bead"></div>
+            <div class="h-card">
+              <span class="h-date">{entry.date}</span>
+              <h3>{entry.title}{entry.glyph && <span class="h-glyph">{entry.glyph}</span>}</h3>
+              <span class="h-region">{entry.region}</span>
+              <p>{entry.body}</p>
+              <div class="h-arch"><b>Architecture link:</b> {entry.archNote}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <button class="h-nav h-nav-next" aria-label="Scroll to later era" data-dir="1">&#8594;</button>
+  </div>
+</section>
+
+<style>
+  .h-timeline-section{
+    --paper: #EDE6D6;
+    --paper-deep: #E2D9C4;
+    --ink: #211E1B;
+    --ink-soft: #4A453D;
+    --seal: #A6321B;
+    --bamboo: #4A5D3A;
+    --gold: #B08D3D;
+    --line: rgba(33,30,27,0.16);
+
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    padding: 56px 0 72px;
+  }
+
+  .h-timeline-head{
+    max-width: 640px;
+    margin: 0 auto 40px;
+    padding: 0 24px;
+    text-align: center;
+  }
+  .h-eyebrow{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--seal);
+  }
+  .h-timeline-head h2{
+    font-family: 'Noto Serif SC', 'Source Serif 4', serif;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    margin: 10px 0 12px;
+  }
+  .h-glyph-accent{ color: var(--seal); }
+  .h-timeline-head p{
+    color: var(--ink-soft);
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .h-timeline-wrap{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 100%;
+    padding: 0 8px;
+  }
+
+  .h-nav{
+    flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: var(--paper-deep);
+    color: var(--ink);
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 3;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .h-nav:hover{ background: var(--seal); color: var(--paper); }
+
+  .h-timeline-viewport{
+    position: relative;
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    padding-top: 8px;
+  }
+
+  .h-rod-line{
+    position: absolute;
+    top: 96px;
+    left: 24px;
+    right: 24px;
+    height: 3px;
+    background: var(--ink);
+    opacity: 0.18;
+    z-index: 1;
+  }
+  .h-rod-fill{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: var(--seal);
+    transition: width 0.15s linear;
+  }
+
+  .h-timeline-track{
+    display: flex;
+    gap: 28px;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    padding: 0 24px 24px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--seal) var(--paper-deep);
+  }
+  .h-timeline-track::-webkit-scrollbar{ height: 8px; }
+  .h-timeline-track::-webkit-scrollbar-track{ background: var(--paper-deep); }
+  .h-timeline-track::-webkit-scrollbar-thumb{ background: var(--seal); border-radius: 4px; }
+
+  .h-entry{
+    flex: 0 0 auto;
+    width: 260px;
+    scroll-snap-align: start;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .h-bead{
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--paper-deep);
+    border: 2px solid var(--ink-soft);
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  }
+  .h-entry.in-view .h-bead{
+    background: var(--seal);
+    border-color: var(--seal);
+    transform: scale(1.1);
+  }
+
+  .h-card{
+    background: rgba(255,252,244,0.6);
+    border: 1px solid var(--line);
+    padding: 20px 20px 18px;
+    width: 100%;
+    opacity: 0.45;
+    transform: translateY(6px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  .h-entry.in-view .h-card{ opacity: 1; transform: translateY(0); }
+
+  .h-date{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--seal);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .h-card h3{
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.1rem;
+    margin: 0 0 4px;
+    line-height: 1.25;
+  }
+  .h-glyph{
+    color: var(--gold);
+    font-weight: 600;
+    font-size: 0.8em;
+    margin-left: 6px;
+  }
+  .h-region{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--bamboo);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .h-card p{
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .h-arch{
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--line);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    color: var(--ink);
+  }
+  .h-arch b{ color: var(--seal); }
+
+  @media (max-width: 640px){
+    .h-nav{ display: none; }
+    .h-rod-line{ left: 16px; right: 16px; top: 84px; }
+    .h-entry{ width: 220px; }
+  }
+</style>
+
+<script>
+  function initHorizontalTimeline() {
+    const section = document.querySelector('.h-timeline-section');
+    if (!section) return;
+
+    const track = section.querySelector('#hTrack') as HTMLElement | null;
+    const rodFill = section.querySelector('#hRodFill') as HTMLElement | null;
+    const entries = section.querySelectorAll('.h-entry');
+    const navButtons = section.querySelectorAll('.h-nav');
+    if (!track || !rodFill) return;
+
+    const io = new IntersectionObserver(
+      (observed) => {
+        observed.forEach((item) => {
+          if (item.isIntersecting) item.target.classList.add('in-view');
+        });
+      },
+      { root: track, threshold: 0.6 }
+    );
+    entries.forEach((entry) => io.observe(entry));
+
+    function updateRod() {
+      const max = track.scrollWidth - track.clientWidth;
+      const pct = max > 0 ? (track.scrollLeft / max) * 100 : 0;
+      rodFill.style.width = pct + '%';
+    }
+
+    track.addEventListener('scroll', updateRod, { passive: true });
+    window.addEventListener('resize', updateRod);
+    updateRod();
+
+    navButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const dir = Number((btn as HTMLElement).dataset.dir || '1');
+        const cardWidth = (entries[0] as HTMLElement)?.offsetWidth || 260;
+        track.scrollBy({ left: dir * (cardWidth + 28), behavior: 'smooth' });
+      });
+    });
+  }
+
+  initHorizontalTimeline();
+  document.addEventListener('astro:page-load', initHorizontalTimeline);
+</script>
