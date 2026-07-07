@@ -103,76 +103,56 @@ const entries: TimelineEntry[] = [
 ];
 ---
 
-<section class="h-timeline-section">
-  <div class="h-timeline-head">
-    <span class="h-eyebrow">Timeline Wing</span>
-    <h2>Reckoning <span class="h-glyph-accent">算盘到芯片</span></h2>
-    <p>Scroll sideways through {entries.length} eras — from counting rods to the AI age.</p>
+<section class="timeline-root">
+  <div class="timeline-head">
+    <span class="timeline-kicker">Timeline</span>
+    <h2>Contributions Through Time</h2>
+    <p>Scroll to browse {entries.length} milestones, from counting rods to modern supercomputers.</p>
   </div>
 
-  <div class="h-timeline-wrap">
-    <button class="h-nav h-nav-prev" aria-label="Scroll to earlier era" data-dir="-1">&#8592;</button>
+  <div class="timeline-wrap">
+    <button class="timeline-nav timeline-prev" aria-label="Scroll to earlier era" data-dir="-1" type="button">&#8592;</button>
 
-    <div class="h-timeline-viewport">
-      <div class="h-rod-line"><div class="h-rod-fill" id="hRodFill"></div></div>
+    <div class="timeline-viewport">
+      <div class="timeline-track" id="timelineTrack">
+        <div class="timeline-line"><div class="timeline-line-fill" id="timelineLineFill"></div></div>
 
-      <div class="h-timeline-track" id="hTrack">
         {entries.map((entry) => (
-          <div class="h-entry">
-            <div class="h-bead"></div>
-            <div class="h-card">
-              <span class="h-date">{entry.date}</span>
-              <h3>{entry.title}{entry.glyph && <span class="h-glyph">{entry.glyph}</span>}</h3>
-              <span class="h-region">{entry.region}</span>
+          <div class="timeline-card">
+            <div class="timeline-dot"></div>
+            <div class="timeline-panel">
+              <span class="timeline-date">{entry.date}</span>
+              <h3>{entry.title}{entry.glyph && <span class="timeline-glyph">{entry.glyph}</span>}</h3>
+              <span class="timeline-region">{entry.region}</span>
               <p>{entry.body}</p>
-              <div class="h-arch"><b>Architecture link:</b> {entry.archNote}</div>
+              <div class="timeline-note"><b>Architecture link:</b> {entry.archNote}</div>
             </div>
           </div>
         ))}
       </div>
+
+      <div class="timeline-scrollbar" id="timelineScrollbar">
+        <div class="timeline-handle" id="timelineHandle"></div>
+      </div>
     </div>
 
-    <button class="h-nav h-nav-next" aria-label="Scroll to later era" data-dir="1">&#8594;</button>
+    <button class="timeline-nav timeline-next" aria-label="Scroll to later era" data-dir="1" type="button">&#8594;</button>
   </div>
 </section>
 
 <style>
-  .h-timeline-section{
-    --paper: #EDE6D6;
-    --paper-deep: #E2D9C4;
-    --ink: #211E1B;
-    --ink-soft: #4A453D;
-    --seal: #A6321B;
-    --bamboo: #4A5D3A;
-    --gold: #B08D3D;
-    --line: rgba(33,30,27,0.16);
+  .timeline-root{
+    padding: 56px 0 72px;
+  }
 
-  .h-timeline-head{
+  .timeline-head{
     max-width: 640px;
     margin: 0 auto 40px;
     padding: 0 24px;
     text-align: center;
   }
-  .h-eyebrow{
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--seal);
-  }
-  .h-timeline-head h2{
-    font-family: 'Noto Serif SC', 'Source Serif 4', serif;
-    font-size: clamp(1.8rem, 4vw, 2.4rem);
-    margin: 10px 0 12px;
-  }
-  .h-glyph-accent{ color: var(--seal); }
-  .h-timeline-head p{
-    color: var(--ink-soft);
-    margin: 0;
-    font-size: 1rem;
-  }
 
-  .h-timeline-wrap{
+  .timeline-wrap{
     position: relative;
     display: flex;
     align-items: center;
@@ -181,63 +161,49 @@ const entries: TimelineEntry[] = [
     padding: 0 8px;
   }
 
-  .h-nav{
+  .timeline-nav{
     flex: 0 0 auto;
     width: 44px;
     height: 44px;
-    border-radius: 50%;
-    border: 1px solid var(--line);
-    background: var(--paper-deep);
-    color: var(--ink);
-    font-size: 18px;
     cursor: pointer;
-    z-index: 3;
-    transition: background 0.2s ease, color 0.2s ease;
   }
-  .h-nav:hover{ background: var(--seal); color: var(--paper); }
 
-  .h-timeline-viewport{
+  .timeline-viewport{
     position: relative;
     flex: 1 1 auto;
     min-width: 0;
-    overflow: hidden;
-    padding-top: 8px;
   }
 
-  .h-rod-line{
+  .timeline-track{
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    padding: 22px 24px 24px;
+    scrollbar-width: none;
+  }
+  .timeline-track::-webkit-scrollbar{ display: none; }
+
+  .timeline-line{
     position: absolute;
-    top: 96px;
+    top: 22px;
     left: 24px;
     right: 24px;
     height: 3px;
-    background: var(--ink);
-    opacity: 0.18;
-    z-index: 1;
+    z-index: 0;
+    pointer-events: none;
   }
-  .h-rod-fill{
+  .timeline-line-fill{
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 0%;
-    background: var(--seal);
-    transition: width 0.15s linear;
   }
 
-  .h-timeline-track{
-    display: flex;
-    gap: 28px;
-    overflow-x: auto;
-    scroll-snap-type: x proximity;
-    padding: 0 24px 24px;
-    scrollbar-width: thin;
-    scrollbar-color: var(--seal) var(--paper-deep);
-  }
-  .h-timeline-track::-webkit-scrollbar{ height: 8px; }
-  .h-timeline-track::-webkit-scrollbar-track{ background: var(--paper-deep); }
-  .h-timeline-track::-webkit-scrollbar-thumb{ background: var(--seal); border-radius: 4px; }
-
-  .h-entry{
+  .timeline-card{
     flex: 0 0 auto;
     width: 260px;
     scroll-snap-align: start;
@@ -245,128 +211,163 @@ const entries: TimelineEntry[] = [
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 1;
   }
 
-  .h-bead{
+  .timeline-dot{
     width: 28px;
     height: 28px;
-    border-radius: 50%;
-    background: var(--paper-deep);
-    border: 2px solid var(--ink-soft);
     margin-bottom: 20px;
     position: relative;
     z-index: 2;
-    transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-  }
-  .h-entry.in-view .h-bead{
-    background: var(--seal);
-    border-color: var(--seal);
-    transform: scale(1.1);
   }
 
-  .h-card{
-    background: rgba(255,252,244,0.6);
-    border: 1px solid var(--line);
+  .timeline-panel{
     padding: 20px 20px 18px;
     width: 100%;
-    opacity: 0.45;
-    transform: translateY(6px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
   }
-  .h-entry.in-view .h-card{ opacity: 1; transform: translateY(0); }
 
-  .h-date{
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.06em;
-    color: var(--seal);
-    text-transform: uppercase;
+  .timeline-date{
     display: block;
     margin-bottom: 6px;
   }
-  .h-card h3{
-    font-family: 'Noto Serif SC', serif;
-    font-size: 1.1rem;
+  .timeline-panel h3{
     margin: 0 0 4px;
-    line-height: 1.25;
   }
-  .h-glyph{
-    color: var(--gold);
-    font-weight: 600;
-    font-size: 0.8em;
+  .timeline-glyph{
     margin-left: 6px;
   }
-  .h-region{
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    color: var(--bamboo);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  .timeline-region{
     display: block;
     margin-bottom: 10px;
   }
-  .h-card p{
-    font-size: 0.88rem;
-    color: var(--ink-soft);
+  .timeline-panel p{
     margin: 0;
   }
-  .h-arch{
+  .timeline-note{
     margin-top: 12px;
     padding-top: 12px;
-    border-top: 1px dashed var(--line);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10.5px;
-    color: var(--ink);
   }
-  .h-arch b{ color: var(--seal); }
+
+  .timeline-scrollbar{
+    position: relative;
+    height: 6px;
+    margin: 4px 24px 0;
+    cursor: pointer;
+  }
+  .timeline-handle{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 60px;
+    height: 14px;
+    transform: translateY(-50%);
+    cursor: grab;
+  }
+  .timeline-handle:active{ cursor: grabbing; }
 
   @media (max-width: 640px){
-    .h-nav{ display: none; }
-    .h-rod-line{ left: 16px; right: 16px; top: 84px; }
-    .h-entry{ width: 220px; }
+    .timeline-nav{ display: none; }
+    .timeline-card{ width: 220px; }
   }
 </style>
 
 <script>
-  function initHorizontalTimeline() {
-    const section = document.querySelector('.h-timeline-section');
-    if (!section) return;
+  function setupTimeline() {
+    const root = document.querySelector('.timeline-root');
+    if (!root) return;
 
-    const track = section.querySelector('#hTrack') as HTMLElement | null;
-    const rodFill = section.querySelector('#hRodFill') as HTMLElement | null;
-    const entries = section.querySelectorAll('.h-entry');
-    const navButtons = section.querySelectorAll('.h-nav');
-    if (!track || !rodFill) return;
+    const track = root.querySelector('#timelineTrack');
+    const lineFill = root.querySelector('#timelineLineFill');
+    const scrollbar = root.querySelector('#timelineScrollbar');
+    const handle = root.querySelector('#timelineHandle');
+    const cards = root.querySelectorAll('.timeline-card');
+    const navButtons = root.querySelectorAll('.timeline-nav');
 
-    const io = new IntersectionObserver(
-      (observed) => {
-        observed.forEach((item) => {
-          if (item.isIntersecting) item.target.classList.add('in-view');
+    if (!track || !lineFill || !scrollbar || !handle) return;
+
+    const observer = new IntersectionObserver(
+      function (observed) {
+        observed.forEach(function (item) {
+          if (item.isIntersecting) item.target.classList.add('active');
         });
       },
       { root: track, threshold: 0.6 }
     );
-    entries.forEach((entry) => io.observe(entry));
+    cards.forEach(function (card) { observer.observe(card); });
 
-    function updateRod() {
-      const max = track.scrollWidth - track.clientWidth;
-      const pct = max > 0 ? (track.scrollLeft / max) * 100 : 0;
-      rodFill.style.width = pct + '%';
+    function maxScroll() {
+      return Math.max(track.scrollWidth - track.clientWidth, 0);
     }
 
-    track.addEventListener('scroll', updateRod, { passive: true });
-    window.addEventListener('resize', updateRod);
-    updateRod();
+    function sync() {
+      const max = maxScroll();
+      const pct = max > 0 ? (track.scrollLeft / max) * 100 : 0;
+      lineFill.style.width = pct + '%';
 
-    navButtons.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const dir = Number((btn as HTMLElement).dataset.dir || '1');
-        const cardWidth = (entries[0] as HTMLElement)?.offsetWidth || 260;
+      const barWidth = scrollbar.clientWidth;
+      const handleWidth = handle.offsetWidth;
+      const travel = Math.max(barWidth - handleWidth, 1);
+      handle.style.left = (travel * (pct / 100)) + 'px';
+    }
+
+    track.addEventListener('scroll', sync, { passive: true });
+    window.addEventListener('resize', sync);
+    sync();
+
+    track.addEventListener('wheel', function (e) {
+      if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+
+      const atStart = track.scrollLeft <= 0;
+      const atEnd = track.scrollLeft >= maxScroll() - 1;
+      const forward = e.deltaY > 0;
+
+      if ((forward && atEnd) || (!forward && atStart)) {
+        return;
+      }
+
+      e.preventDefault();
+      track.scrollLeft += e.deltaY;
+    }, { passive: false });
+
+    navButtons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const dir = Number(btn.getAttribute('data-dir') || '1');
+        const first = cards[0];
+        const cardWidth = first ? first.offsetWidth : 260;
         track.scrollBy({ left: dir * (cardWidth + 28), behavior: 'smooth' });
       });
     });
+
+    let dragging = false;
+
+    function moveTo(clientX) {
+      const rect = scrollbar.getBoundingClientRect();
+      const handleWidth = handle.offsetWidth;
+      const travel = Math.max(rect.width - handleWidth, 1);
+      const raw = clientX - rect.left - handleWidth / 2;
+      const clamped = Math.min(Math.max(raw, 0), travel);
+      const pct = clamped / travel;
+      track.scrollLeft = pct * maxScroll();
+    }
+
+    handle.addEventListener('pointerdown', function (e) {
+      dragging = true;
+      handle.setPointerCapture(e.pointerId);
+    });
+    handle.addEventListener('pointermove', function (e) {
+      if (!dragging) return;
+      moveTo(e.clientX);
+    });
+    handle.addEventListener('pointerup', function () { dragging = false; });
+    handle.addEventListener('pointercancel', function () { dragging = false; });
+
+    scrollbar.addEventListener('click', function (e) {
+      if (e.target === handle) return;
+      moveTo(e.clientX);
+    });
   }
 
-  initHorizontalTimeline();
-  document.addEventListener('astro:page-load', initHorizontalTimeline);
+  setupTimeline();
+  document.addEventListener('astro:page-load', setupTimeline);
 </script>
