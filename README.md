@@ -47,6 +47,7 @@ The initial exhibit page structure has been completed using Astro and MDX. The e
 - Learned how Astro combines Markdown with React components, allowing interactive elements to be embedded directly into an exhibit page.
 - Understood the Git workflow for collaborative development, including cloning repositories, pulling changes, committing, and pushing updates.
 - Finding a way to override the article page color.
+- Finding a way to turn References into a list-style.
 
 ### Challenges Encountered
 
@@ -54,6 +55,7 @@ The initial exhibit page structure has been completed using Astro and MDX. The e
 - Studying a new type of framework within a limited amount of time.
 - Fixing the layout of timeline.
 - Fixing layout of styles and colors within the article.
+- Unable to find significant contributions in North Korea and Mongolia compared to other East Asia countries listed.
 
 ---
 
