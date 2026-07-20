@@ -246,3 +246,65 @@
 .mia-options button {
     white-space: normal;
 }
+
+/* ===== Full Page Width Fix ===== */
+
+.content,
+.content__block,
+.content__titlemeta,
+.article,
+.header,
+.header__titleblock {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.content {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.content__block {
+    overflow-x: hidden;
+}
+
+.content__titlemeta {
+    overflow-wrap: anywhere;
+}
+
+.content__titlemeta h1,
+.header__titleblock strong,
+.header__subtitle {
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+.article {
+    width: 100%;
+}
+
+.article p,
+.article li,
+.article a,
+.article h1,
+.article h2,
+.article h3,
+.article h4 {
+    overflow-wrap: anywhere;
+}
+
+@media (min-width: 1100px) {
+    .content__block {
+        flex: 4;
+        min-width: 0;
+    }
+
+    .toc {
+        flex: 0 0 180px;
+    }
+
+    .padder {
+        flex: 0 0 0;
+        display: none;
+    }
+}
