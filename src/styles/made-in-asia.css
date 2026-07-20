@@ -151,9 +151,13 @@
     cursor: pointer;
     transition: all 0.2s ease;
     outline: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
-.country:hover {
+.country:hover,
+.country:focus-visible {
     fill: var(--bg1, #cbd5e1);
 }
 
@@ -161,6 +165,14 @@
     fill: var(--accent, #3b82f6);
     stroke: var(--accent, #1e40af);
     stroke-width: 1;
+}
+
+.country-inert {
+    fill: var(--bg1, #cbd5e1);
+    stroke: var(--text, #94a3b8);
+    stroke-width: 0.5;
+    opacity: 0.5;
+    pointer-events: none;
 }
 
 .country-info h3 {
