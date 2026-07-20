@@ -190,7 +190,6 @@ const entries: TimelineEntry[] = [
     position: absolute;
     top: 22px;
     left: 24px;
-    right: 24px;
     height: 3px;
     z-index: 0;
     pointer-events: none;
@@ -301,6 +300,9 @@ const entries: TimelineEntry[] = [
     }
 
     function sync() {
+      const line = track.querySelector('.timeline-line');
+      if (line) line.style.width = (track.scrollWidth - 48) + 'px';
+
       const max = maxScroll();
       const pct = max > 0 ? (track.scrollLeft / max) * 100 : 0;
       lineFill.style.width = pct + '%';
