@@ -9,6 +9,7 @@ import ComputingTimelineHorizontal from '../components/ComputingTimelineHorizont
 import '../styles/made-in-asia.css';
 import InfoCard from '../components/InfoCard.astro';
 import Map from '../components/map.jsx';
+import TriviaQuiz from '../components/TriviaQuiz.jsx';
 
 # Made in Asia: Contributions of East Asia in Computing
 
@@ -46,64 +47,7 @@ import Map from '../components/map.jsx';
 
 ## Trivia Game
 
-<section className="mia-trivia-panel">
-  <h3>Quick Trivia: East Asia in Computing</h3>
-
-  <p>
-    Test your knowledge about East Asia’s contributions to computing and technology.
-  </p>
-
-  <div className="mia-trivia-card">
-    <h4>Question 1</h4>
-    <p>Which East Asian country is known for helping popularize compact discs, PlayStation consoles, and many consumer electronics?</p>
-
-    <div className="mia-options">
-      <button>China</button>
-      <button>Japan</button>
-      <button>South Korea</button>
-      <button>Taiwan</button>
-    </div>
-
-    <details className="mia-answer">
-  <summary>Show answer</summary>
-  <p><strong>Answer:</strong> Japan</p>
-</details>
-  </div>
-
-  <div className="mia-trivia-card">
-    <h4>Question 2</h4>
-    <p>Which country is strongly connected to semiconductor manufacturing through companies like TSMC?</p>
-
-    <div className="mia-options">
-      <button>Taiwan</button>
-      <button>Japan</button>
-      <button>Mongolia</button>
-      <button>North Korea</button>
-    </div>
-
-   <details className="mia-answer">
-  <summary>Show answer</summary>
-  <p><strong>Answer:</strong> Taiwan</p>
-</details>
-  </div>
-
-  <div className="mia-trivia-card">
-    <h4>Question 3</h4>
-    <p>Which East Asian country became globally known for companies such as Samsung and LG?</p>
-
-    <div className="mia-options">
-      <button>China</button>
-      <button>South Korea</button>
-      <button>Taiwan</button>
-      <button>Japan</button>
-    </div>
-
-    <details className="mia-answer">
-  <summary>Show answer</summary>
-  <p><strong>Answer:</strong> South Korea</p>
-</details>
-  </div>
-</section>
+<TriviaQuiz client:load />
 
 
 ## Exhibit Goals
