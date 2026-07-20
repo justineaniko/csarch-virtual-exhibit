@@ -326,14 +326,22 @@
         display: none;
     }
 }
-/* ===== Trivia Answer Reveal ===== */
 
-.mia-answer summary {
-    cursor: pointer;
-    color: #d6b84f;
-    font-weight: bold;
+/* ===== Interactive Trivia Styling ===== */
+
+.mia-options button.correct {
+    background: #16a34a;
+    color: #ffffff;
+    border-color: #16a34a;
 }
 
-.mia-answer p {
-    margin-bottom: 0;
+.mia-options button.wrong {
+    background: #dc2626;
+    color: #ffffff;
+    border-color: #dc2626;
+}
+
+.mia-result {
+    font-weight: bold;
+    color: #d6b84f;
 }
