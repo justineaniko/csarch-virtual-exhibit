@@ -322,10 +322,6 @@
 }
 /* ===== Trivia Answer Reveal ===== */
 
-.mia-answer {
-    margin-top: 1rem;
-}
-
 .mia-answer summary {
     cursor: pointer;
     color: #d6b84f;
@@ -333,5 +329,5 @@
 }
 
 .mia-answer p {
-    margin-top: 0.5rem;
+    margin-bottom: 0;
 }
