@@ -189,3 +189,60 @@
     background: #1b1b1b !important;
     color: #d0d4db;
 }
+
+/* ===== Layout Fixes ===== */
+
+.article {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+.article * {
+    box-sizing: border-box;
+}
+
+.mia-hero,
+.mia-map-panel,
+.mia-info-panel,
+.mia-section-panel,
+.mia-trivia-panel,
+.mia-goal-card,
+.map-container,
+.country-info-panel {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+.mia-hero p,
+.mia-section-panel p,
+.mia-trivia-panel p,
+.mia-goal-card,
+.mia-reference-group li,
+.mia-reference-group a {
+    overflow-wrap: anywhere;
+}
+
+/* Fix trivia layout */
+.mia-trivia-panel {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    align-items: stretch;
+}
+
+.mia-trivia-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid #374151;
+    border-radius: var(--radius);
+    padding: 1rem;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+.mia-trivia-card h4 {
+    margin-top: 0;
+    color: #ffffff;
+}
+
+.mia-options button {
+    white-space: normal;
+}
