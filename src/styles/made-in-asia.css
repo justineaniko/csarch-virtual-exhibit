@@ -158,22 +158,28 @@
 
 .country:hover,
 .country:focus-visible {
-    fill: var(--bg1, #cbd5e1);
+    filter: brightness(1.15);
 }
 
 .country-active {
     fill: var(--accent, #3b82f6);
     stroke: var(--accent, #1e40af);
-    stroke-width: 1;
+    stroke-width: 2;
+    filter: brightness(1.15);
 }
 
 .country-inert {
-    fill: var(--bg1, #cbd5e1);
+    fill: #6B7280;
     stroke: var(--text, #94a3b8);
     stroke-width: 0.5;
-    opacity: 0.5;
+    opacity: 1;
     pointer-events: none;
 }
+
+.country-china {fill: #A83A3A;}
+.country-japan {fill: #D68A3C;}
+.country-southkorea {fill: #4F8F5B;}
+.country-taiwan {fill: #3F7FC1;}
 
 .country-info h3 {
     margin-top: 0;
