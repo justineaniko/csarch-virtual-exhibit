@@ -24,16 +24,6 @@ const questions = [
     ],
   },
   {
-    question: "China's Sunway TaihuLight supercomputer made headlines for a specific reason. What was it?",
-    answer: "It ran entirely on homegrown SW26010 processors, not Intel or AMD",
-    choices: [
-      { text: "It ran entirely on homegrown SW26010 processors, not Intel or AMD", info: "The SW26010 processors were built domestically, breaking China's reliance on Western chipmakers." },
-      { text: "It was the first liquid-cooled supercomputer", info: "Liquid cooling isn't what made TaihuLight famous, but instead its SW26010 processors." },
-      { text: "It was built entirely from recycled hardware", info: "TaihuLight wasn't built from recycled parts, but instead used entirely domestic processors." },
-      { text: "It ran the first version of Linux ever released", info: "TaihuLight didn't debut Linux. Its significance was proving China could build many-core processors independently." },
-    ],
-  },
-  {
     question: "Which Japanese company built the HX-20, credited as the world's first laptop computer, in 1981?",
     answer: "Epson",
     choices: [
@@ -51,6 +41,16 @@ const questions = [
       { text: "It was a cheap laptop.", info: "The T1100 cost around 2,000 USD." },
       { text: "It was the first laptop made outside Japan.", info: "Toshiba is a Japanese company." },
       { text: "It was the first laptop fully compatible with IBM PC Software.", info: "Preceding laptops could only run their own software, while this used the same as an IBM PC, allowing for the laptop industry to exist commercially."},
+    ],
+  },
+  {
+    question: "China's Sunway TaihuLight supercomputer made headlines for a specific reason. What was it?",
+    answer: "It ran entirely on homegrown SW26010 processors, not Intel or AMD",
+    choices: [
+      { text: "It ran entirely on homegrown SW26010 processors, not Intel or AMD", info: "The SW26010 processors were built domestically, breaking China's reliance on Western chipmakers." },
+      { text: "It was the first liquid-cooled supercomputer", info: "Liquid cooling isn't what made TaihuLight famous, but instead its SW26010 processors." },
+      { text: "It was built entirely from recycled hardware", info: "TaihuLight wasn't built from recycled parts, but instead used entirely domestic processors." },
+      { text: "It ran the first version of Linux ever released", info: "TaihuLight didn't debut Linux. Its significance was proving China could build many-core processors independently." },
     ],
   },
   {
