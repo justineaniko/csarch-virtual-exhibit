@@ -131,7 +131,7 @@ const entries: TimelineEntry[] = [
         <div class="timeline-line"><div class="timeline-line-fill" id="timelineLineFill"></div></div>
 
         {entries.map((entry) => (
-          <div class={`timeline-card country-{$entry.country}`}>
+          <div class={`timeline-card country-${entry.country}`}>
             <div class="timeline-dot"></div>
             <div class="timeline-panel">
               <span class="timeline-date">{entry.date}</span>
