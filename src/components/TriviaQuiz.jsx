@@ -90,7 +90,7 @@ export default function TriviaQuiz() {
               <p className="mia-result">
                 {selected === item.answer
                   ? "Correct!"
-                  : "Wrong answer."}</strong>{" "}
+                  : "Wrong answer."}{" "}
                     {chosenChoice.info}
               </p>
             )}
