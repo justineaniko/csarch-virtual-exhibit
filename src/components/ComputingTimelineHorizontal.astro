@@ -6,6 +6,7 @@ export interface TimelineEntry {
   region: string;
   body: string;
   archNote: string;
+  country: "china" | "japan" | "southkorea" | "taiwan";
 }
 
 const entries: TimelineEntry[] = [
@@ -14,14 +15,16 @@ const entries: TimelineEntry[] = [
     title: "Counting Rods",
     glyph: "筹算",
     region: "China",
+    country: "china",
     body: "Bamboo or bone sticks laid on a grid to represent numbers in a decimal, place-value system, moved between columns to add, subtract, multiply, and divide.",
-    archNote: "Ancestor of place-value registers.",
+    archNote: "Ancestor of place-value registers.", 
   },
   {
     date: "c. 2nd Century CE",
     title: "Suanpan",
     glyph: "算盘",
     region: "China",
+    country: "china",
     body: "The Chinese abacus formalizes rod-counting into beads on wires, a hybrid decimal/quinary system fast enough to outpace early mechanical calculators.",
     archNote: "Fixed-width \"registers\" with manual carry propagation.",
   },
@@ -30,6 +33,7 @@ const entries: TimelineEntry[] = [
     title: "Su Song's Clocktower",
     glyph: "水运仪象台",
     region: "China (Song)",
+    country: "china",
     body: "A water-driven tower in Kaifeng combined an escapement, armillary sphere, and celestial globe to track time and star positions automatically.",
     archNote: "Escapement = an early clock signal.",
   },
@@ -38,6 +42,7 @@ const entries: TimelineEntry[] = [
     title: "Soroban",
     glyph: "そろばん",
     region: "Japan",
+    country: "japan",
     body: "A refined, simplified bead layout for faster single-hand operation — so embedded in education that mental \"anzan\" arithmetic is still taught today.",
     archNote: "Hardware redesign for throughput.",
   },
@@ -45,6 +50,7 @@ const entries: TimelineEntry[] = [
     date: "1946",
     title: "Abacus vs. Calculator",
     region: "Tokyo, Japan",
+    country: "japan",
     body: "A U.S. Army electro-mechanical calculator faced a soroban in a public contest — the soroban won most rounds.",
     archNote: "An early literal hardware benchmark.",
   },
@@ -53,6 +59,7 @@ const entries: TimelineEntry[] = [
     title: "The 103 Computer",
     glyph: "103机",
     region: "China",
+    country: "china",
     body: "China's first operational digital computer, built with Soviet assistance — a vacuum-tube machine at roughly 30 operations per second.",
     archNote: "Entry into stored-program architecture.",
   },
@@ -60,6 +67,7 @@ const entries: TimelineEntry[] = [
     date: "1954–1956",
     title: "FUJIC & FACOM 100",
     region: "Japan",
+    country: "japan",
     body: "Okazaki Bunji builds FUJIC, Japan's first electronic computer, largely alone. Fujitsu follows with the FACOM line.",
     archNote: "Relay → tube → transistor logic in one lineage.",
   },
@@ -67,6 +75,7 @@ const entries: TimelineEntry[] = [
     date: "1967–1970s",
     title: "Korea's First Computers",
     region: "South Korea",
+    country: "southkorea",
     body: "An imported IBM 1401 handles the 1967 census; KIST begins domestic computing research shortly after.",
     archNote: "Batch-processing before Korea's chip industry existed.",
   },
@@ -75,6 +84,7 @@ const entries: TimelineEntry[] = [
     title: "The VLSI Push",
     glyph: "超LSI計画",
     region: "Japan",
+    country: "japan",
     body: "NEC, Hitachi, Fujitsu, Toshiba, and Mitsubishi pool research to master VLSI manufacturing, leading global DRAM production through the 1980s.",
     archNote: "A national leap in transistor density.",
   },
@@ -83,6 +93,7 @@ const entries: TimelineEntry[] = [
     title: "TSMC Founded",
     glyph: "台積電",
     region: "Taiwan",
+    country: "taiwan",
     body: "Morris Chang founds a \"pure-play foundry\" that only fabricates chips designed by other companies.",
     archNote: "Fabless/foundry split still standard today.",
   },
@@ -90,6 +101,7 @@ const entries: TimelineEntry[] = [
     date: "1990s–2000s",
     title: "Samsung's Memory Rise",
     region: "South Korea",
+    country: "southkorea",
     body: "Samsung overtakes Japanese rivals to lead global DRAM and NAND flash production.",
     archNote: "Global-scale memory hierarchy.",
   },
@@ -97,6 +109,7 @@ const entries: TimelineEntry[] = [
     date: "2016–Present",
     title: "TaihuLight & the AI Era",
     region: "China / Region-wide",
+    country: "china",
     body: "China's Sunway TaihuLight tops supercomputer rankings on domestic processors; focus shifts to AI accelerators and RISC-V.",
     archNote: "Massively parallel, domestic ISA design.",
   },
@@ -118,7 +131,7 @@ const entries: TimelineEntry[] = [
         <div class="timeline-line"><div class="timeline-line-fill" id="timelineLineFill"></div></div>
 
         {entries.map((entry) => (
-          <div class="timeline-card">
+          <div class={`timeline-card country-{$entry.country}`}">
             <div class="timeline-dot"></div>
             <div class="timeline-panel">
               <span class="timeline-date">{entry.date}</span>
@@ -269,6 +282,16 @@ const entries: TimelineEntry[] = [
     .timeline-nav{ display: none; }
     .timeline-card{ width: 220px; }
   }
+
+  .timeline-card.country-china .timeline-dot { background: #A83A3A; border-radius: 50%; }
+  .timeline-card.country-japan .timeline-dot { background: #D68A3C; border-radius: 50%; }
+  .timeline-card.country-southkorea .timeline-dot { background: #4F8F5B; border-radius: 50%; }
+  .timeline-card.country-taiwan .timeline-dot { background: #3F7FC1; border-radius: 50%; }
+  
+  .timeline-card.country-china .timeline-panel { border-top: 3px solid #A83A3A; }
+  .timeline-card.country-japan .timeline-panel { border-top: 3px solid #D68A3C; }
+  .timeline-card.country-southkorea .timeline-panel { border-top: 3px solid #4F8F5B; }
+  .timeline-card.country-taiwan .timeline-panel { border-top: 3px solid #3F7FC1; }
 </style>
 
 <script>
