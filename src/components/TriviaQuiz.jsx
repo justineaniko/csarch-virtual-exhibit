@@ -3,21 +3,35 @@ import { useState } from "react";
 const questions = [
   {
     question:
-      "Which East Asian country is known for helping popularize compact discs, PlayStation consoles, and many consumer electronics?",
-    choices: ["China", "Japan", "South Korea", "Taiwan"],
-    answer: "Japan",
+      "In 1971, Masatoshi Shima co-designed a chip that shifted computing from multi-chip systems to single-chip logic. What was it?",
+    answer: "Intel 4004",
+    choices: [
+                {text: "Intel 8080", info: "This followed in 1974."},
+                {text: "Intel 4004", info: "This was the world's first commercial microprocessor, built for a Japanese calculator."},
+                {text: "Zilog Z80", info: "This chip came from Zilog, a firm Shima later helped found after leaving Intel."},
+                {text: "MOS 6502", info: "This powered machines like the Apple II, but is not related to Shima's work at Intel."},
+              ],
   },
   {
     question:
-      "Which country is strongly connected to semiconductor manufacturing through companies like TSMC?",
-    choices: ["Taiwan", "Japan", "Mongolia", "North Korea"],
+      "TSMC's 'pure-play foundry' model let companies like Apple and Nvidia design chips without owning a factory. Which country pioneered this?",
     answer: "Taiwan",
+    choices: [
+                {text: "Taiwan", info: "TSMC separated chip design from chip manufacturing, letting the companies design silicon without a factory."},
+                {text: "South Korea", info: "Better at making memory chips; for example, Samsung and SK Hynix are leaders with DRAM and NAND."},
+                {text: "Japan", info: "Inventions like the NAND flash and the Intel 4004, not the foundry model"},
+                {text: "China", info: "Focused on building independence from Western chips like the Sunway TaihuLight processors."},
+              ],
   },
   {
-    question:
-      "Which East Asian country became globally known for companies such as Samsung and LG?",
-    choices: ["China", "South Korea", "Taiwan", "Japan"],
-    answer: "South Korea",
+    question: "China's Sunway TaihuLight supercomputer made headlines for a specific reason. What was it?",
+    answer: "It ran entirely on homegrown SW26010 processors, not Intel or AMD",
+    choices: [
+      { text: "It ran entirely on homegrown SW26010 processors, not Intel or AMD", info: "The SW26010 processors were built domestically, breaking China's reliance on Western chipmakers." },
+      { text: "It was the first liquid-cooled supercomputer", info: "Liquid cooling isn't what made TaihuLight famous — its homegrown SW26010 processors were the real story." },
+      { text: "It was built entirely from recycled hardware", info: "TaihuLight wasn't built from recycled parts — it made news for using entirely domestic processors." },
+      { text: "It ran the first version of Linux ever released", info: "TaihuLight didn't debut Linux — its significance was proving China could build many-core processors independently." },
+    ],
   },
 ];
 
@@ -43,7 +57,8 @@ export default function TriviaQuiz() {
       {questions.map((item, index) => {
         const selected = selectedAnswers[index];
         const hasAnswered = selected !== undefined;
-
+        const chosenChoice = item.choices.find((c) => c.text === selected);
+      
         return (
           <div className="mia-trivia-card" key={index}>
             <h4>Question {index + 1}</h4>
@@ -61,11 +76,11 @@ export default function TriviaQuiz() {
 
                 return (
                   <button
-                    key={choice}
+                    key={choice.text}
                     className={buttonClass}
                     onClick={() => handleAnswer(index, choice)}
                   >
-                    {choice}
+                    {choice.text}
                   </button>
                 );
               })}
@@ -75,7 +90,8 @@ export default function TriviaQuiz() {
               <p className="mia-result">
                 {selected === item.answer
                   ? "Correct!"
-                  : `Incorrect. The correct answer is ${item.answer}.`}
+                  : "Wrong answer."}</strong>{" "}
+                    {chosenChoice.info}
               </p>
             )}
           </div>
