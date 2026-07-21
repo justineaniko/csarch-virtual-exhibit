@@ -37,7 +37,7 @@ CSARCH2 Case Study 1 - Group 2
 
 Given the topic, the group decided on proper work distribution as well as the layout of the 
 website. After gathering multiple resources and information, the group collectively chose not to
-include North Korea, Macau, and Hong Kong due to their lack of contributions related to the topic.
+include North Korea, Macau, Mongolia, and Hong Kong due to their lack of contributions related to the topic.
 Astro and MDX were utilized to organize, build, and write the virtual exhibit whilst retaining the
 provided layouts to preserve compatibility with other webpages. Additionally, React was used for components
 which required changing the state and those that responded to user input. The map component used
@@ -72,7 +72,7 @@ customized to become unique. Visual accents are also present to make them the in
 - Figuring out how to get around the overflow because the texts were getting cut off.
 - Preventing the timeline from forcefully expand the webpage horizontally to fit the entire timeline into one panel.
 - Color-coding the timeline.
-- Trying to see if North Korea, Macau, and Hong Kong had relevant contributions to include.
+- Trying to see if North Korea, Macau, Mongolia, and Hong Kong had relevant contributions to include.
 
 ## AI/LLM Disclosure
 
