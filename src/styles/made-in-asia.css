@@ -287,7 +287,9 @@
 .content__titlemeta,
 .article,
 .header,
-.header__titleblock {
+.header__titleblock,
+.toc,
+.padder {
     min-width: 0;
     max-width: 100%;
 }
