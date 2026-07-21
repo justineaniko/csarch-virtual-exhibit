@@ -42,8 +42,8 @@ Astro and MDX were utilized to organize, build, and write the virtual exhibit wh
 provided layouts to preserve compatibility with other webpages. Additionally, React was used for components
 which required changing the state and those that responded to user input. The map component used
 SVG shapes with each country being selectable through mouse interaction. The timeline presents the contributions
-of the countries in a chronological manner, allowing users to browse through the timeline using horizontal scrolling
-as well as previous and next arrow buttons. Finally, the trivia quiz tests the information learned by the user within
+of the countries in a chronological manner, allowing users to browse through the timeline using previous and next arrow buttons. 
+Finally, the trivia quiz tests the information learned by the user within
 the virtual exhibit, giving them a score as well as the ability to restart the quiz.
 
 ### Creative
