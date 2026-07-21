@@ -73,6 +73,40 @@ const questions = [
       { text: "A weather forecasting computer", info: "The TDX-1 was a telecom infrastructure, not related to meteorology."},
     ],
   },
+
+    {
+    question:
+      "Which South Korean companies are known as global leaders in DRAM, NAND flash, and high-bandwidth memory used in modern AI and GPU systems?",
+    answer: "Samsung and SK Hynix",
+    choices: [
+      { text: "Samsung and SK Hynix", info: "These companies helped South Korea become a major force in memory technologies used by modern computers, GPUs, and AI systems." },
+      { text: "Sony and Nintendo", info: "These are Japanese companies known more for entertainment hardware and gaming consoles." },
+      { text: "ASUS and Acer", info: "These are Taiwanese companies known for PCs, motherboards, and consumer electronics." },
+      { text: "Huawei and Lenovo", info: "These are Chinese technology companies, but they are not South Korea’s major memory chip leaders." },
+    ],
+  },
+  {
+    question:
+      "Which Japanese company invented NAND flash memory, a storage technology used in SSDs, USB drives, and memory cards?",
+    answer: "Toshiba",
+    choices: [
+      { text: "Toshiba", info: "Toshiba engineer Fujio Masuoka invented NAND flash memory, which became important for modern solid-state storage." },
+      { text: "Samsung", info: "Samsung became a major producer of NAND flash, but Toshiba is credited with inventing it." },
+      { text: "Acer", info: "Acer is a Taiwanese computer company, not the inventor of NAND flash memory." },
+      { text: "Lenovo", info: "Lenovo is a Chinese computer company and is not credited with inventing NAND flash memory." },
+    ],
+  },
+  {
+    question:
+      "Which open instruction set architecture has China strongly invested in to reduce dependence on proprietary Western processor standards?",
+    answer: "RISC-V",
+    choices: [
+      { text: "RISC-V", info: "RISC-V is open-source, making it useful for countries and companies that want more independence in processor design." },
+      { text: "x86", info: "x86 is a proprietary architecture mainly associated with Intel and AMD." },
+      { text: "ARM", info: "ARM is widely used in mobile devices, but it is still a licensed architecture rather than a fully open standard." },
+      { text: "PowerPC", info: "PowerPC was used in some older computers and consoles, but it is not the open architecture China is currently emphasizing." },
+    ],
+  }
 ];
 
 export default function TriviaQuiz() {
