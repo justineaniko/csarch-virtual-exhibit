@@ -5,7 +5,7 @@ const countryKey = title.toLowerCase().replace(/\s+/g, "");
 
 <div class={`info-card country-${countryKey}`}>
   <h3>{title}</h3>
-  <p>{body}</p>
+  <p set:html={body} />
 </div>
 
 <style>
@@ -20,6 +20,12 @@ const countryKey = title.toLowerCase().replace(/\s+/g, "");
 
   .info-card h3 {
     font-size: 1.75rem;
+}
+
+  .info-card br {
+  display: block;
+  content: "";
+  margin-top: 1rem;
 }
 
   .info-card.country-china h3 {color: #A83A3A !important ;}
