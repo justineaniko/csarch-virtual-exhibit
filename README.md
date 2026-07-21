@@ -37,20 +37,27 @@ CSARCH2 Case Study 1 - Group 2
 
 Given the topic, the group decided on proper work distribution as well as the layout of the 
 website. After gathering multiple resources and information, the group collectively chose not to
-include North Korea, Macau, Mongolia, and Hong Kong due to their lack of contributions related to the topic.
+include North Korea, Macau, Mongolia, and Hong Kong due to the limited availability of well-documented 
+contributions directly related to the exhibit's focus on computing and computer architecture.
+
 Astro and MDX were utilized to organize, build, and write the virtual exhibit whilst retaining the
 provided layouts to preserve compatibility with other webpages. Additionally, React was used for components
 which required changing the state and those that responded to user input. The map component used
 SVG shapes with each country being selectable through mouse interaction. The timeline presents the contributions
 of the countries in a chronological manner, allowing users to browse through the timeline using previous and next arrow buttons. 
-Finally, the trivia quiz tests the information learned by the user within
-the virtual exhibit, giving them a score as well as the ability to restart the quiz.
+Additionally, the trivia quiz tests the information learned by the user within
+the virtual exhibit, giving them a score as well as the ability to restart the quiz. The use of Astro components together with React also 
+allowed static content and interactive elements to coexist within a single webpage.
+Finally, to improve maintainability, the group dvided the website into different parts which allowed group members 
+to work separately whilst reducing merge conflicts during the development of the website.
 
 ### Creative
 
 After researching different ways to alter the design of the webpage without conflicting with the code for the layout 
 as well as the group trying to replicate the proposed sample as much as possible, the group decided on a uniform theme 
-within the entire exhibit. Through the use of !important and css, the group was able to change the color of the background
+within the entire exhibit. The group also experimented with different layouts before deciding the final format. Usability was
+highly considered whilst aesthetically improving the website to ensure that users have an appropriate experience.
+Through the use of !important and css, the group was able to change the color of the background
 for the containers. The original template given was still preserved for consistency, whilst the internal sections were 
 customized to become unique. Visual accents are also present to make them the information easier to identify and remember.
 
@@ -64,6 +71,7 @@ customized to become unique. Visual accents are also present to make them the in
 - Turning the timeline into a scroll box.
 - Using !important to change colors and overwrite previously written css codes.
 - A horizontal timeline requires careful control of overflow, flex sizing, parent width, and scrollbar behavior.
+- Learned how to properly scope CSS so that modifications only affected the intended exhibit.
 
 ### Challenges Encountered
 
@@ -73,13 +81,16 @@ customized to become unique. Visual accents are also present to make them the in
 - Preventing the timeline from forcefully expand the webpage horizontally to fit the entire timeline into one panel.
 - Color-coding the timeline.
 - Trying to see if North Korea, Macau, Mongolia, and Hong Kong had relevant contributions to include.
+- Testing compatibility between components created by different group members.
+- Finding reliable academic and official sources for historical computing contributions.
+- Maintaining a consistent style in writing information within the website.
 
 ## AI/LLM Disclosure
 
 Generative AI tools, including ChatGPT & Claude, were used to assist with framework
     explanations, troubleshooting, and understanding Astro 6, Node, React, & mdx. 
-    All suggestions were reviewed, tested, and modified by
-    the group before inclusion.
+    All AI-generated information and suggestions were thoroughly reviewed, tested, and modified before
+    being implemented within the group's website. 
 
 AI was used to:
 - Help separate the referenced entire map SVG (Due to large size) into only the east asian maps that the group is working on.
