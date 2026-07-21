@@ -1,8 +1,9 @@
 ---
 const { title, body } = Astro.props;
+const countryKey = title.toLowerCase().replace(/\s+/g, "");
 ---
 
-<div class="info-card">
+<div class={`info-card country-${countryKey}`}>
   <h3>{title}</h3>
   <p>{body}</p>
 </div>
