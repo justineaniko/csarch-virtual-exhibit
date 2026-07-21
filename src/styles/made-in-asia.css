@@ -210,7 +210,7 @@
 }
 
 .country-thumb {
-    width: 300px;
+    width: 325px;
     max-width: 75%;
     aspect-ratio: 16 / 10;
     object-fit: cover;

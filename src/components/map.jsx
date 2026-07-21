@@ -44,9 +44,9 @@ const countryData = {
         ],
         contribution: (
             <ul>
-                <li>Co-designed the Intel 4004 (1971), shifting the computing paradigm from multi-chip systems to single-chip logic architecture.</li>
-                <li>Invented NAND Flash Memory in the 1980s (Toshiba), changing the memory hierarchy and paving the way for modern Solid State Drives (SSDs).</li>
-                <li>Pioneered custom processing engines for entertainment (Nintendo 64's 64-bit architecture, Sony's Cell engine) and supercomputing (Fugaku's ARM-based A64FX processor).</li>
+                <li>Co-designed the Intel 4004 (1971), shifting CPU execution units from multi-board to a single monolithic silicon die. It integrated a 4-bit ALU, 4-bit file, 12-bit address bus logic unit, and control mechanisms onto one IC. Shifting the paradigm for modern single-chip microprocessors.</li>
+                <li>Invented NAND Flash Memory in the 1980s (Toshiba) which increased storage density and introduced page-write/block-erase cycles, changing the memory hierarchy and paving the way for modern Solid State Drives and DRAM.</li>
+                <li>Integrated 64-bit architecture with dedicated graphics co-processing vector units in the Nintendo 64 and the 512-bit ARM SVE set in the Fugaku supercomputer.</li>
             </ul>
         ),
     },
@@ -59,9 +59,9 @@ const countryData = {
         ],
         contribution: (
             <ul>
-                <li>Dominates global memory architecture (Samsung, SK Hynix), pushing the boundaries of DRAM and NAND Flash limits.</li>
-                <li>Pioneered High-Bandwidth Memory (HBM) architecture, allowing data to move between memory and processors at the massive speeds required for modern AI.</li>
-                <li>Led the transition to System-on-Chip (SoC) designs, integrating CPUs, GPUs, and cellular modems into single, power-efficient mobile footprints.</li>
+                <li>Overcame 2D scaling limits by engineering 3D Vertical-NAND architecture (Samsung). It utilizes Charge Trap Flash (CTF) technology and Channel Hole structures to drastically increase storage density.</li>
+                <li>Pioneered High-Bandwidth Memory 2.5D packaging, solving DRAM bottlenecks, and an ultra-wide 1024-bit data bus for Terabyte-per-second AI execution bandwidth.</li>
+                <li>Popularized Heterogeneous Multi-Processing (HMP) in mobile System-on-Chips (SoCs) via the ARM big.LITTLE architecture (Samsung). Integrating high-performance out-of-order cores with energy-efficient in-order cores on a single die.</li>
             </ul>
         ),
     },
@@ -74,8 +74,8 @@ const countryData = {
         ],
         contribution: (
             <ul>
-                <li>Revolutionized chip manufacturing (TSMC) by separating design from fabrication, allowing global companies to architect complex silicon without owning factories.</li>
-                <li>Perfected and standardized PC motherboard architecture in the 1990s (ASUS, Gigabyte, Acer), defining how CPUs communicate with peripherals via PCIe and chipsets.</li>
+                <li>Established the Pure-Play Foundry model (TSMC), structurally separating IC architectural design from physical fabrication. Enabling global companies to execute logic block designs without owning physical factories.</li>
+                <li>Standardized the structural topology of PC motherboards (ASUS, Gigabyte, Acer, etc.) in the 1990s by perfecting the two-part core logic chipset layout. Systematically routed Front-Side Bus (FSB) traces for high-speed CPU-to-Northbridge to communicate with lower-speed I/O peripheral buses like PCIe or SATA.</li>
             </ul>
         ),
     },
