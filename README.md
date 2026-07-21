@@ -84,6 +84,8 @@ customized to become unique. Visual accents are also present to make them the in
 - Testing compatibility between components created by different group members.
 - Finding reliable academic and official sources for historical computing contributions.
 - Maintaining a consistent style in writing information within the website.
+- Figuring out the SVG for every country and how to apply it to the website.
+- Styling and trying to figure out what looks best.
 
 ## AI/LLM Disclosure
 
