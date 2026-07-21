@@ -125,9 +125,15 @@
 
 .map-container,
 .country-info-panel {
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.country-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    flex-grow: 1;
 }
 
 .map-container {
@@ -187,18 +193,65 @@
 }
 
 .country-info {
-    overflow: hidden; /* contains the floated image below */
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
 }
 
-.country-image {
-    float: right;
-    width: 220px;
-    max-width: 40%;
-    height: auto;
+.country-info-text {
+    min-width: 0;
+}
+
+.country-info-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.country-thumb {
+    width: 300px;
+    max-width: 75%;
+    aspect-ratio: 16 / 10;
     object-fit: cover;
     border-radius: var(--radius);
-    margin: 0 0 1rem 1.25rem;
     border: 1px solid #374151;
+    cursor: pointer;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 0.15s ease, opacity 0.15s ease, border-color 0.15s ease;
+}
+
+.country-thumb:hover,
+.country-thumb:focus-visible {
+    transform: scale(1.02);
+    opacity: 0.9;
+    border-color: #d6b84f;
+}
+
+@media (max-width: 420px) {
+    .country-info-gallery {
+        flex-wrap: wrap;
+    }
+}
+
+.image-lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    cursor: zoom-out;
+    padding: 2rem;
+}
+
+.image-lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
 
 .placeholder {
