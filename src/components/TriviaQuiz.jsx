@@ -68,9 +68,9 @@ export default function TriviaQuiz() {
               {item.choices.map((choice) => {
                 let buttonClass = "";
 
-                if (hasAnswered && choice === item.answer) {
+                if (hasAnswered && choice.text === item.answer) {
                   buttonClass = "correct";
-                } else if (hasAnswered && choice === selected) {
+                } else if (hasAnswered && choice.text === selected) {
                   buttonClass = "wrong";
                 }
 
@@ -78,7 +78,7 @@ export default function TriviaQuiz() {
                   <button
                     key={choice.text}
                     className={buttonClass}
-                    onClick={() => handleAnswer(index, choice)}
+                    onClick={() => handleAnswer(index, choice.text)}
                   >
                     {choice.text}
                   </button>
