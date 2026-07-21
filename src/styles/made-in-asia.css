@@ -1,5 +1,5 @@
 .mia-hero {
-    background: #111827;
+    background: #1b1b1b;
     color: #d0d4db;
     text-align: center;
     padding: 3rem 2rem;
@@ -37,7 +37,7 @@
 .mia-section-panel,
 .mia-trivia-panel,
 .mia-goal-card {
-    background: #111827;
+    background: #1b1b1b;
     color: #d0d4db;
     border: none;
     border-radius: var(--radius);
