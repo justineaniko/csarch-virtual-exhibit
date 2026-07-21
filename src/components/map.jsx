@@ -10,7 +10,8 @@
 import { useState } from "react";
 import "../styles/made-in-asia.css";
 
-import chinaImg from "../assets/china.jpg";
+import china_1 from "../assets/china_1.jpg";
+import china_2 from "../assets/china_2.png";
 import japanImg from "../assets/japan.jpg";
 import southKoreaImg from "../assets/sk.jpg";
 import taiwanImg from "../assets/taiwan.jpg";
@@ -20,18 +21,24 @@ import taiwanImg from "../assets/taiwan.jpg";
 const countryData = {
     china: {
         name: "China",
-        image: chinaImg,
+        images: [
+            { src: china_1, alt: "Sunway TaihuLight supercomputer" },
+            { src: china_2, alt: "RISC-V open ISA development" },
+        ],
         contribution:(
             <ul>
-                <li> Developed the Sunway TaihuLight supercomputer using entirely native SW26010 processors (many-core architecture) to break reliance on Western silicon.</li>
-                <li> Leading the global adoption and development of RISC-V (an open-source Instruction Set Architecture) to build processors independent of proprietary x86 or ARM standards.</li>
+                <li> Developed the Sunway TaihuLight supercomputer using entirely native SW26010 processors to break reliance on Western silicon. Natively fusing 4 Management Processing Elements (MPEs) and 8x8 mesh of 256 Computing Processing Elements (CPEs) directly on a single 64-bit RISC die. Surpassing 100 Petaflops in performance in 2016.</li>
+                <li> Leading the global adoption and development of RISC-V (an open-source Instruction Set Architecture) to build processors independent of proprietary x86 or ARM standards. One implementation is RiVAl Technologies' Lingyu CPU featuring 32 general-purpose cores and 8 specialized intelligent computing cores for large-scale data processing, energy efficiency, and AI inferences.</li>
             </ul>
         ),
     },
 
     japan: {
         name: "Japan",
-        image: japanImg,
+        images: [
+            { src: japanImg, alt: "Intel 4004 co-design" },
+            { src: japanImg, alt: "NAND Flash Memory invention" },
+        ],
         contribution: (
             <ul>
                 <li>Co-designed the Intel 4004 (1971), shifting the computing paradigm from multi-chip systems to single-chip logic architecture.</li>
@@ -43,7 +50,10 @@ const countryData = {
 
     southkorea: {
         name: "South Korea",
-        image: southKoreaImg,
+        images: [
+            { src: southKoreaImg, alt: "Samsung and SK Hynix memory architecture" },
+            { src: southKoreaImg, alt: "High-Bandwidth Memory (HBM)" },
+        ],
         contribution: (
             <ul>
                 <li>Dominates global memory architecture (Samsung, SK Hynix), pushing the boundaries of DRAM and NAND Flash limits.</li>
@@ -55,7 +65,10 @@ const countryData = {
 
     taiwan: {
         name: "Taiwan",
-        image: taiwanImg,
+        images: [
+            { src: taiwanImg, alt: "TSMC chip fabrication" },
+            { src: taiwanImg, alt: "PC motherboard standardization" },
+        ],
         contribution: (
             <ul>
                 <li>Revolutionized chip manufacturing (TSMC) by separating design from fabrication, allowing global companies to architect complex silicon without owning factories.</li>
@@ -67,14 +80,27 @@ const countryData = {
 
 export default function Map() {
     const [selected, setSelected] = useState(null);
+    const [expandedImage, setExpandedImage] = useState(null);
 
     const active = selected ? countryData[selected] : null;
 
-    const select = (id) => () => setSelected(id);
+    const select = (id) => () => {
+        setSelected(id);
+        setExpandedImage(null);
+    };
     const selectOnKey = (id) => (e) => {
         if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
             setSelected(id);
+            setExpandedImage(null);
+        }
+    };
+
+    const openImage = (img) => () => setExpandedImage(img);
+    const openImageOnKey = (img) => (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            setExpandedImage(img);
         }
     };
 
@@ -184,15 +210,27 @@ export default function Map() {
             <div className="country-info-panel">
                 {active ? (
                     <div className="country-info">
-                        <h3>{active.name}</h3>
-                        {active.image && (
-                            <img
-                                src={active.image.src}
-                                alt={`${active.name} illustrative image`}
-                                className="country-image"
-                            />
+                        <div className="country-info-text">
+                            <h3>{active.name}</h3>
+                            <div>{active.contribution}</div>
+                        </div>
+
+                        {active.images && active.images.length > 0 && (
+                            <div className="country-info-gallery">
+                                {active.images.slice(0, 3).map((img, i) => (
+                                    <img
+                                        key={i}
+                                        src={img.src.src ?? img.src}
+                                        alt={img.alt}
+                                        className="country-thumb"
+                                        role="button"
+                                        tabIndex={0}
+                                        onClick={openImage(img)}
+                                        onKeyDown={openImageOnKey(img)}
+                                    />
+                                ))}
+                            </div>
                         )}
-                        <div>{active.contribution}</div>
                     </div>
                 ) : (
                     <div className="placeholder">
@@ -200,6 +238,26 @@ export default function Map() {
                     </div>
                 )}
             </div>
+
+            {expandedImage && (
+                <div
+                    className="image-lightbox"
+                    onClick={() => setExpandedImage(null)}
+                    role="button"
+                    tabIndex={0}
+                    aria-label="Close expanded image"
+                    onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " " || e.key === "Escape") {
+                            setExpandedImage(null);
+                        }
+                    }}
+                >
+                    <img
+                        src={expandedImage.src.src ?? expandedImage.src}
+                        alt={expandedImage.alt}
+                    />
+                </div>
+            )}
         </section>
     );
 }
