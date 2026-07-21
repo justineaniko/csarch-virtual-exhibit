@@ -18,6 +18,76 @@ CSARCH2 Case Study 1 - Group 2
 *Luis Andre Vito*
 
 ---
+# Final Submission Report
+
+## Final Features
+
+- Hero section with exhibit introduction
+- Country information regarding contributions
+- Interactive East Asia Map
+- Country-information panel based on selected country from map
+- Scrollable timeline
+- Interactive 10-question trivia with scoring, navigation, and restart functionality
+- Exhibit goals
+- Reference citations
+
+## Discussions
+
+### Technical
+
+Given the topic, the group decided on proper work distribution as well as the layout of the 
+website. After gathering multiple resources and information, the group collectively chose not to
+include North Korea, Macau, and Hong Kong due to their lack of contributions related to the topic.
+Astro and MDX were utilized to organize, build, and write the virtual exhibit whilst retaining the
+provided layouts to preserve compatibility with other webpages. Additionally, React was used for components
+which required changing the state and those that responded to user input. The map component used
+SVG shapes with each country being selectable through mouse interaction. The timeline presents the contributions
+of the countries in a chronological manner, allowing users to browse through the timeline using horizontal scrolling
+as well as previous and next arrow buttons. Finally, the trivia quiz tests the information learned by the user within
+the virtual exhibit, giving them a score as well as the ability to restart the quiz.
+
+### Creative
+
+After researching different ways to alter the design of the webpage without conflicting with the code for the layout 
+as well as the group trying to replicate the proposed sample as much as possible, the group decided on a uniform theme 
+within the entire exhibit. Through the use of !important and css, the group was able to change the color of the background
+for the containers. The original template given was still preserved for consistency, whilst the internal sections were 
+customized to become unique. Visual accents are also present to make them the information easier to identify and remember.
+
+## Development Process
+
+### Aha! Moments
+
+- Found a way to turn the Trivia Questions into carousel form.
+- Learned how to add scoring to the Trivia Questions and a way to restart.
+- Finding a way to show the correct answer after answering a trivia question.
+- Turning the timeline into a scroll box.
+- Using !important to change colors and overwrite previously written css codes.
+- A horizontal timeline requires careful control of overflow, flex sizing, parent width, and scrollbar behavior.
+
+### Challenges Encountered
+
+- Changing the format of the Trivia Questions.
+- Was unable to implement a scoring feature for the Trivia Questions at first.
+- Figuring out how to get around the overflow because the texts were getting cut off.
+- Preventing the timeline from forcefully expand the webpage horizontally to fit the entire timeline into one panel.
+- Color-coding the timeline.
+- Trying to see if North Korea, Macau, and Hong Kong had relevant contributions to include.
+
+## AI/LLM Disclosure
+
+Generative AI tools, including ChatGPT & Claude, were used to assist with framework
+    explanations, troubleshooting, and understanding Astro 6, Node, React, & mdx. 
+    All suggestions were reviewed, tested, and modified by
+    the group before inclusion.
+
+AI was used to:
+- Help separate the referenced entire map SVG (Due to large size) into only the east asian maps that the group is working on.
+- Suggest CSS and responsive-layout fixes.
+- Explain horizontal timeline overflow.
+- Check possible conflicting code with provided layout.
+
+---
 
 # Mid-milestone Report
 
