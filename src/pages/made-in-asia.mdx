@@ -29,13 +29,25 @@ import TriviaQuiz from '../components/TriviaQuiz.jsx';
 
 ## Country Information
 
-<InfoCard title="Japan" body="Japan’s contribution to computer architecture started at the birth of the modern CPU. In 1971, Japanese engineer Masatoshi Shima co-designed the Intel 4004, the world’s first commercial microprocessor, originally intended for a Japanese calculator (Busicom). This had shifted the paradigm from multi-chip processors to a single-chip logic architecture. Japan also revolutionized data storage architecture when Fujio Masuoka at Toshiba invented the NAND Flash Memory in the 1980s. This invention completely changed the memory hierarchy of computers, eventually leading to the replacement of mechanical hard drives with Solid State Drives (SSDs). Today, Japan continues to lead in high-performance architecture through the Fugaku supercomputer, which utilizes an ARM-based A64FX processor that heavily utilizes massive parallel processing and on top of that, energy efficiency. Additionally, entertainment giants Sony and Nintendo transformed specialized computer architecture; the Nintendo 64 brought 64-bit computing to the masses, while Sony’s PlayStation series pushed the limits of high-performance RISC and parallel processing through custom-engineered silicon like the Cell engine." />
+<InfoCard title="Japan" body="<p>Japan’s contribution to computer architecture started at the birth of the modern CPU. In 1971, Japanese engineer Masatoshi Shima co-designed the Intel 4004, the world’s first commercial microprocessor, originally intended for a Japanese calculator (Busicom). Busicom, the company that had commissioned this chip, was unhappy with the project and allowed Intel to repurchase the right to the chip. Busicom then went bankrupt in 1974, just three years after Intel bought back the rights to the microprocessor. <u> This had shifted the paradigm from multi-chip processors to a single-chip logic architecture. </u> </p>
 
-<InfoCard title="Taiwan" body="Taiwan’s role in computer architecture is defined by the Foundry Model and the standardization of the PC. TSMC (Taiwan Semiconductor Manufacturing Company) revolutionized the industry by separating chip design from chip manufacturing. This allowed architectural giants like Apple, Nvidia, and AMD to push the boundaries of complex circuit design without the burden of operating factories. Beyond the silicon itself, Taiwanese companies like ASUS, Gigabyte, and Acer were instrumental in the 1990s for perfecting the motherboard architecture. They standardized the layout of the Northbridge/Southbridge chipsets and expansion slots (like PCI and later PCIe), which dictated how CPUs communicate with peripherals in almost every desktop computer used today." />
+<p> Japan also revolutionized data storage architecture when Fujio Masuoka at Toshiba invented the NAND Flash Memory in the 1980s. Toshiba's bonus for this invention was only a few hundred dollars, while later trying to demote him. He sued them in 2006 and settled for approximately 758,000 USD. Despite all of that, this invention completely changed the memory hierarchy of computers. It eventually lead to the replacement of mechanical hard drives with Solid State Drives (SSDs). </p>
 
-<InfoCard title="South Korea" body="While other nations focused on logic, South Korea perfected the architecture of the Memory Wall. Samsung and SK Hynix dominate the global development of DRAM and the NAND Flash. Their architectural innovations in High-Bandwidth Memory (HBM) have become the backbone of modern AI and GPU architectures, allowing data to move between the memory and the processor at speeds previously thought impossible. South Korea also led the transition to modern mobile architectures; through the development of System-on-Chip (SoC) designs for their smartphones, they helped integrate CPU, GPU, and cellular modems into a single, power-efficient architectural footprint that defines modern mobile computing." />
+<p> Today, Japan continues to lead in high-performance architecture through the Fugaku supercomputer, which utilizes an ARM-based A64FX processor that heavily utilizes massive parallel processing and, on top of that, energy efficiency. This supercomputer was the first ever to top four major world rankings simultaneously. It has 7,630,848 ARM cores and 442 Petaflops (or 442 quadrillion computations per second). That is <b> three times </b> the computational capabilities of the 2nd fastest machine in the world. </p>
 
-<InfoCard title="China" body="China has rapidly moved from a consumer of technology to an architect of high-performance computing (HPC). China’s Sunway TaihuLight supercomputer gained international fame because its architecture was built entirely on homegrown processors (the SW26010), rather than relying on Western chips like Intel or AMD. This demonstrated a massive leap in many-core processor architecture. Currently, China is a global leader in the adoption of RISC-V, an open-source instruction set architecture (ISA). By investing heavily in RISC-V, Chinese architects are creating a new generation of processors that are independent of proprietary Western standards (like the x86 or ARM), aiming for a future of open computer architecture for everything from IoT (Internet of Things) devices to data centers." />
+<p> Additionally, entertainment giants Sony and Nintendo transformed specialized computer architecture; the Nintendo 64 brought 64-bit computing to the masses, while Sony’s PlayStation series pushed the limits of high-performance RISC and parallel processing through custom-engineered silicon like the Cell engine. Oddly enough, most N64 games barely used the 64-bit instructions because 32-bit operations actually ran faster on the hardware. </p>" />
+
+<InfoCard title="Taiwan" body="Taiwan’s role in computer architecture is defined by the Foundry Model and the standardization of the PC. TSMC (Taiwan Semiconductor Manufacturing Company) revolutionized the industry by separating chip design from chip manufacturing. Morris Chang actually pitched this earlier to Texas Instruments in the 1970s, only to get rejected. It was not until the Taiwanese government asked him to start a semiconductor industry in 1987 that this continued. This allowed architectural giants like Apple, Nvidia, and AMD to push the boundaries of complex circuit design without the burden of operating factories. <br />
+
+Beyond the silicon itself, Taiwanese companies like ASUS, Gigabyte, and Acer were instrumental in the 1990s for perfecting the motherboard architecture. They standardized the layout of the Northbridge/Southbridge chipsets and expansion slots (like PCI and later PCIe), which dictated how CPUs communicate with peripherals in almost every desktop computer used today." />
+
+<InfoCard title="South Korea" body="While other nations focused on logic, South Korea perfected the architecture of the Memory Wall. Samsung and SK Hynix dominate the global development of DRAM and the NAND Flash. Their architectural innovations in High-Bandwidth Memory (HBM) have become the backbone of modern AI and GPU architectures, allowing data to move between the memory and the processor at speeds previously thought impossible. <br />
+
+South Korea also led the transition to modern mobile architectures; through the development of System-on-Chip (SoC) designs for their smartphones, they helped integrate CPU, GPU, and cellular modems into a single, power-efficient architectural footprint that defines modern mobile computing." />
+
+<InfoCard title="China" body="China has rapidly moved from a consumer of technology to an architect of high-performance computing (HPC). China’s Sunway TaihuLight supercomputer gained international fame because its architecture was built entirely on homegrown processors (the SW26010), rather than relying on Western chips like Intel or AMD. This demonstrated a massive leap in many-core processor architecture. Each SW26010 chip packs 260 cores. The full system runs 40,960 of these chips and peaks at 125 petaflops (or 125 quadrillion computations per second). <br /> 
+
+Currently, China is a global leader in the adoption of RISC-V, an open-source instruction set architecture (ISA). By investing heavily in RISC-V, Chinese architects are creating a new generation of processors that are independent of proprietary Western standards (like the x86 or ARM), aiming for a future of open computer architecture for everything from IoT (Internet of Things) devices to data centers. The push for the RISC-V is explicitly tied by industry analysts to reducting dependence on foreign chip tech amidst U.S. export restrictions." />
 
 ## Interactive Map
 
@@ -67,11 +79,14 @@ import TriviaQuiz from '../components/TriviaQuiz.jsx';
     <ul>
       <li>Shima, M. <a href="https://ethw.org/Oral-History:Masatoshi_Shima" target="_blank">Oral-History: Masatoshi Shima and the 4004</a>. Engineering and Technology History Wiki.</li>
       <li>Computer History Museum. <a href="https://www.computerhistory.org/revolution/memory-storage/8/256" target="_blank">Memory & Storage: The First Microprocessors</a>.</li>
+      <li>Computer History Museum. <a href="https://www.computerhistory.org/revolution/memory-storage/8/256">Fujio Masuoka.</a></li>
       <li>Kioxia. <a href="https://www.kioxia.com/en-jp/insights/history-of-our-memory-201910.html" target="_blank">History of Our Memory: The Invention of NAND Flash</a>.</li>
       <li>Amazon Web Services. <a href="https://aws.amazon.com/blogs/publicsector/why-fugaku-japans-fastest-supercomputer-went-virtual-on-aws/" target="_blank">Why Fugaku, Japan’s Fastest Supercomputer, Went Virtual</a>.</li>
       <li>Copetti. <a href="https://www.copetti.org/writings/consoles/nintendo-64/" target="_blank">Nintendo 64 Architecture</a>.</li>
       <li>David Bader. <a href="https://davidbader.net/post/20180608-dcd/" target="_blank">The PlayStation Supercomputer</a>.</li>
-      <li>Engineering and Technology History Wiki. <a href="https://ethw.org/Oral-History:Masatoshi_Shima">Masatoshi Shima.</a></li>
+      <li>Engineering and Technology History Wiki. <a href="https://ethw.org/Oral-History:Masatoshi_Shima" target="_blank">Masatoshi Shima.</a></li>
+      <li>Intel. <a href="https://www.intel.com/content/www/us/en/history/virtual-vault/articles/the-intel-4004.html" target="_blank">The Intel 4004.</a></li>
+      <li>Tech Radar. <a href="https://www.techradar.com/news/the-worlds-fastest-supercomputer-is-now-even-more-absurdly-powerful-than-before" target="_blank">Arm's Fugaku Supercomputer</a></li>
     </ul>
 
     <h3>Taiwan</h3>
@@ -80,6 +95,7 @@ import TriviaQuiz from '../components/TriviaQuiz.jsx';
       <li>Culpium. <a href="https://www.culpium.com/p/exclusiveapple-is-fighting-for-tsmc" target="_blank">Apple’s Strategic Partnership with TSMC for 2nm Chips</a>.</li>
       <li>ASUS. <a href="https://www.asus.com/event/pcdiy/sg/our-legacy.html" target="_blank">Our Legacy: Leading the Motherboard Industry</a>.</li>
       <li>Jabroo Tech. <a href="https://jabroo.blogspot.com/2011/09/motherboard.html" target="_blank">A Detailed History of the Motherboard</a>.</li>
+  <li>Spectrum. <a href="https://spectrum.ieee.org/morris-chang-foundry-father" target="_blank">Morris Chang.</a></li>
     </ul>
 
     <h3>South Korea</h3>
@@ -95,7 +111,7 @@ import TriviaQuiz from '../components/TriviaQuiz.jsx';
       <li>BBC News. <a href="https://www.bbc.com/news/articles/c9q2pwzngjqo" target="_blank">The Global Impact of China's Computing Sector</a>.</li>
       <li>The State Council Information Office of China. <a href="http://www.scio.gov.cn/news_0/202209/t20220921_415792.html" target="_blank">The Digital Economy and High-Tech Innovation in China</a>.</li>
       <li>Jamestown Foundation. <a href="https://jamestown.substack.com/p/examining-chinas-grand-strategy-for" target="_blank">Examining China’s Grand Strategy for Tech Leadership</a>.</li>
-      <li>National Science Review.<a href="https://academic.oup.com/nsr/article/3/3/265/2236604">Sunway TaihuLight Supercomputer.</a></li>
+      <li>National Science Review.<a href="https://academic.oup.com/nsr/article/3/3/265/2236604" target="_blank">Sunway TaihuLight Supercomputer.</a></li>
     </ul>
   </div>
 </section>
