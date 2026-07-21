@@ -12,9 +12,12 @@ import "../styles/made-in-asia.css";
 
 import china_1 from "../assets/china_1.jpg";
 import china_2 from "../assets/china_2.png";
-import japanImg from "../assets/japan.jpg";
-import southKoreaImg from "../assets/sk.jpg";
-import taiwanImg from "../assets/taiwan.jpg";
+import japan_1 from "../assets/japan_1.jpg";
+import japan_2 from "../assets/japan_2.jpg";
+import sk_1 from "../assets/sk_1.jpg";
+import sk_2 from "../assets/sk_2.jpg";
+import taiwan_1 from "../assets/taiwan_1.jpg";
+import taiwan_2 from "../assets/taiwan_2.jpg";
 
 // Country Data with contributions and other future information if changes are needed
 // Contributions are taken from Country Information and more will be added soon.
@@ -28,7 +31,7 @@ const countryData = {
         contribution:(
             <ul>
                 <li> Developed the Sunway TaihuLight supercomputer using entirely native SW26010 processors to break reliance on Western silicon. Natively fusing 4 Management Processing Elements (MPEs) and 8x8 mesh of 256 Computing Processing Elements (CPEs) directly on a single 64-bit RISC die. Surpassing 100 Petaflops in performance in 2016.</li>
-                <li> Leading the global adoption and development of RISC-V (an open-source Instruction Set Architecture) to build processors independent of proprietary x86 or ARM standards. One implementation is RiVAl Technologies' Lingyu CPU featuring 32 general-purpose cores and 8 specialized intelligent computing cores for large-scale data processing, energy efficiency, and AI inferences.</li>
+                <li> Leading the global adoption and development of RISC-V to build processors independent of proprietary x86 or ARM standards. One implementation is RiVAl Technologies' Lingyu CPU featuring 32 general-purpose cores and 8 specialized intelligent computing cores for large-scale data processing, energy efficiency, and AI inferences.</li>
             </ul>
         ),
     },
@@ -36,8 +39,8 @@ const countryData = {
     japan: {
         name: "Japan",
         images: [
-            { src: japanImg, alt: "Intel 4004 co-design" },
-            { src: japanImg, alt: "NAND Flash Memory invention" },
+            { src: japan_1, alt: "Intel 4004 co-design" },
+            { src: japan_2, alt: "NAND Flash Memory invention" },
         ],
         contribution: (
             <ul>
@@ -51,8 +54,8 @@ const countryData = {
     southkorea: {
         name: "South Korea",
         images: [
-            { src: southKoreaImg, alt: "Samsung and SK Hynix memory architecture" },
-            { src: southKoreaImg, alt: "High-Bandwidth Memory (HBM)" },
+            { src: sk_1, alt: "Samsung and SK Hynix memory architecture" },
+            { src: sk_2, alt: "High-Bandwidth Memory (HBM)" },
         ],
         contribution: (
             <ul>
@@ -66,8 +69,8 @@ const countryData = {
     taiwan: {
         name: "Taiwan",
         images: [
-            { src: taiwanImg, alt: "TSMC chip fabrication" },
-            { src: taiwanImg, alt: "PC motherboard standardization" },
+            { src: taiwan_1, alt: "TSMC chip fabrication" },
+            { src: taiwan_2, alt: "PC motherboard standardization" },
         ],
         contribution: (
             <ul>
