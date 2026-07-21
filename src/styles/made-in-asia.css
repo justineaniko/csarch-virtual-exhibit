@@ -228,6 +228,7 @@
 .article {
     overflow-x: hidden;
     max-width: 100%;
+    box-sizing: border-box;
 }
 
 .article * {
@@ -262,11 +263,19 @@
     align-items: stretch;
 }
 
+.mia-trivia-panel > h3 {
+    color: #EF6464;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 1rem;
+    margin: 0 0 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #374151;
+}
+
 .mia-trivia-card {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid #374151;
-    border-radius: var(--radius);
-    padding: 1rem;
+    border-top: 1px solid #374151;
+    padding: 1.25rem 0;
     max-width: 100%;
     overflow-wrap: anywhere;
 }
