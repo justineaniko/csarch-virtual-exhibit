@@ -86,6 +86,7 @@ customized to become unique. Visual accents are also present to make them the in
 - Maintaining a consistent style in writing information within the website.
 - Figuring out the SVG for every country and how to apply it to the website.
 - Styling and trying to figure out what looks best.
+- Trying to figure out how to put paragraph breaks on a non-html file
 
 ## AI/LLM Disclosure
 
