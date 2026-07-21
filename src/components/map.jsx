@@ -10,11 +10,17 @@
 import { useState } from "react";
 import "../styles/made-in-asia.css";
 
+import chinaImg from "../assets/china.jpg";
+import japanImg from "../assets/japan.jpg";
+import southKoreaImg from "../assets/sk.jpg";
+import taiwanImg from "../assets/taiwan.jpg";
+
 // Country Data with contributions and other future information if changes are needed
 // Contributions are taken from Country Information and more will be added soon.
 const countryData = {
     china: {
         name: "China",
+        image: chinaImg,
         contribution:(
             <ul>
                 <li> Developed the Sunway TaihuLight supercomputer using entirely native SW26010 processors (many-core architecture) to break reliance on Western silicon.</li>
@@ -25,6 +31,7 @@ const countryData = {
 
     japan: {
         name: "Japan",
+        image: japanImg,
         contribution: (
             <ul>
                 <li>Co-designed the Intel 4004 (1971), shifting the computing paradigm from multi-chip systems to single-chip logic architecture.</li>
@@ -36,6 +43,7 @@ const countryData = {
 
     southkorea: {
         name: "South Korea",
+        image: southKoreaImg,
         contribution: (
             <ul>
                 <li>Dominates global memory architecture (Samsung, SK Hynix), pushing the boundaries of DRAM and NAND Flash limits.</li>
@@ -47,6 +55,7 @@ const countryData = {
 
     taiwan: {
         name: "Taiwan",
+        image: taiwanImg,
         contribution: (
             <ul>
                 <li>Revolutionized chip manufacturing (TSMC) by separating design from fabrication, allowing global companies to architect complex silicon without owning factories.</li>
@@ -70,7 +79,7 @@ export default function Map() {
     };
 
     const shapeProps = (id) => ({
-        className: `country ${selected === id ? 'country-active' : ''}`,
+        className: `country country-${id} ${selected === id ? 'country-active' : ''}`,
         onClick: select(id),
         onKeyDown: selectOnKey(id),
         role: "button",
@@ -84,7 +93,7 @@ export default function Map() {
             <div className="map-container">
                 <svg
                     className="map-svg"
-                    viewBox="600 350 200 150"
+                    viewBox="559.4 351.4 192.2 135.6"
                     xmlns="http://www.w3.org/2000/svg"
                     role="img"
                     aria-label="Map of China, Japan, South Korea, and Taiwan"
@@ -176,7 +185,14 @@ export default function Map() {
                 {active ? (
                     <div className="country-info">
                         <h3>{active.name}</h3>
-                        <p>{active.contribution}</p>
+                        {active.image && (
+                            <img
+                                src={active.image.src}
+                                alt={`${active.name} illustrative image`}
+                                className="country-image"
+                            />
+                        )}
+                        <div>{active.contribution}</div>
                     </div>
                 ) : (
                     <div className="placeholder">

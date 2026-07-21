@@ -140,7 +140,7 @@
     width: 100%;
     height: auto;
     max-height: 480px;
-    background: var(--bg1);
+    background: #16324f;
     border-radius: var(--radius);
 }
 
@@ -161,13 +161,6 @@
     filter: brightness(1.15);
 }
 
-.country-active {
-    fill: var(--accent, #3b82f6);
-    stroke: var(--accent, #1e40af);
-    stroke-width: 2;
-    filter: brightness(1.15);
-}
-
 .country-inert {
     fill: #6B7280;
     stroke: var(--text, #94a3b8);
@@ -181,9 +174,31 @@
 .country-southkorea {fill: #4F8F5B;}
 .country-taiwan {fill: #3F7FC1;}
 
+.country-active {
+    fill: #d6b84f;
+    stroke: #a8842f;
+    stroke-width: 2;
+    filter: brightness(1.15);
+}
+
 .country-info h3 {
     margin-top: 0;
     font-family: "Lora Variable";
+}
+
+.country-info {
+    overflow: hidden; /* contains the floated image below */
+}
+
+.country-image {
+    float: right;
+    width: 220px;
+    max-width: 40%;
+    height: auto;
+    object-fit: cover;
+    border-radius: var(--radius);
+    margin: 0 0 1rem 1.25rem;
+    border: 1px solid #374151;
 }
 
 .placeholder {
