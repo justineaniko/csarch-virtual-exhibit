@@ -48,6 +48,8 @@ The initial exhibit page structure has been completed using Astro and MDX. The e
 - Understood the Git workflow for collaborative development, including cloning repositories, pulling changes, committing, and pushing updates.
 - Finding a way to override the article page color.
 - Finding a way to turn References into a list-style.
+- Found a way to turn the Trivia Questions into carousel form
+- Learned how to add scoring to the Trivia Questions and a way to restart
 
 ### Challenges Encountered
 
@@ -56,6 +58,8 @@ The initial exhibit page structure has been completed using Astro and MDX. The e
 - Fixing the layout of timeline.
 - Fixing layout of styles and colors within the article.
 - Unable to find significant contributions in North Korea and Mongolia compared to other East Asia countries listed.
+- Changing the format of the Trivia Questions
+- Was unable to implement a scoring feature for the Trivia Questions at first
 
 ---
 
@@ -63,7 +67,7 @@ The initial exhibit page structure has been completed using Astro and MDX. The e
 
 - Improve overall functionality
 - Populate computing contributions for all countries
-- Develop Trivia Game functionality and add more questions
+- Add more Trivia Questions
 - Improve styling and overall visual design
 - Perform final testing and polish
 - Adjust timeline from expanding page
