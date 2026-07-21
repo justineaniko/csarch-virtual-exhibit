@@ -28,9 +28,49 @@ const questions = [
     answer: "It ran entirely on homegrown SW26010 processors, not Intel or AMD",
     choices: [
       { text: "It ran entirely on homegrown SW26010 processors, not Intel or AMD", info: "The SW26010 processors were built domestically, breaking China's reliance on Western chipmakers." },
-      { text: "It was the first liquid-cooled supercomputer", info: "Liquid cooling isn't what made TaihuLight famous — its homegrown SW26010 processors were the real story." },
-      { text: "It was built entirely from recycled hardware", info: "TaihuLight wasn't built from recycled parts — it made news for using entirely domestic processors." },
-      { text: "It ran the first version of Linux ever released", info: "TaihuLight didn't debut Linux — its significance was proving China could build many-core processors independently." },
+      { text: "It was the first liquid-cooled supercomputer", info: "Liquid cooling isn't what made TaihuLight famous, but instead its SW26010 processors." },
+      { text: "It was built entirely from recycled hardware", info: "TaihuLight wasn't built from recycled parts, but instead used entirely domestic processors." },
+      { text: "It ran the first version of Linux ever released", info: "TaihuLight didn't debut Linux. Its significance was proving China could build many-core processors independently." },
+    ],
+  },
+  {
+    question: "Which Japanese company built the HX-20, credited as the world's first laptop computer, in 1981?",
+    answer: "Epson",
+    choices: [
+      { text: "Sony", info: "Sony did not release a laptop until years later." },
+      { text: "Sharp", info: "Sharp made calculators and early portables (not the HX-20)." },
+      { text: "Epson", info: "Then known as Suwa Seikosha, this computer was built with two Hitachi processors and a battery that lasts up to 50 hours." },
+      { text: "Toshiba", info: "Toshiba's laptop came four years later in 1985."},
+    ],
+  },
+  {
+    question: "Toshiba's T1100 was launched in 1985 and, despite not being the first laptop, was still incredibly significant. Why?",
+    answer: "It was the first laptop fully compatible with IBM PC Software.",
+    choices: [
+      { text: "It was the first laptop with a colored screen.", info: "The T1100 has a black-and-white screen." },
+      { text: "It was a cheap laptop.", info: "The T1100 cost around 2,000 USD." },
+      { text: "It was the first laptop made outside Japan.", info: "Toshiba is a Japanese company." },
+      { text: "It was the first laptop fully compatible with IBM PC Software.", info: "Preceding laptops could only run their own software, while this used the same as an IBM PC, allowing for the laptop industry to exist commercially."},
+    ],
+  },
+  {
+    question: "China's Loongson processor line began in 2001 as an attempt to build a CPU independent of Intel, AMD, and ARM. What instruction set did they use?",
+    answer: "MIPS",
+    choices: [
+      { text: "x86", info: "x86 is Intel and AMD's own architecture." },
+      { text: "MIPS", info: "Developed at the Chinese Academy of Sciences, Loongson used this before building its own instruction set in 2020." },
+      { text: "SPARC", info: "This was a Sun Microsystems architecture." },
+      { text: "RISC-V", info: "RISC-V wasn't created until 2010."},
+    ],
+  },
+  {
+    question: "In 1986, South Korea's ETRI commercialized the TDX-1. This was the country's first fully domestic version of what system?",
+    answer: "A digital telephone switching exchange",
+    choices: [
+      { text: "A home video game console", info: "The TDX-1 was a telecom infrastructure, not commercial." },
+      { text: "A digital telephone switching exchange", info: "This allowed Korea to be the 10th country in the world to develop this kind of exchange system independently. It eventually became the basis of Korea's CDMA mobile network." },
+      { text: "A word processor", info: "The TDX-1 was a telecom infrastructure, not for documents." },
+      { text: "A weather forecasting computer", info: "The TDX-1 was a telecom infrastructure, not related to meteorology."},
     ],
   },
 ];
